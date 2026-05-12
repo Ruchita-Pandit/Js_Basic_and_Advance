@@ -1,12 +1,31 @@
-// Day 1 - Basics
-// Hands-on exercises
+// Task 1
+const task1Result = `
+Text
+42
+true
+3.14
+`;
 
-console.log("Exercise 1: Output different types");
-console.log("Text");
-console.log(42);
-console.log(true);
+document.querySelector("#task1Output").textContent = task1Result;
 
-console.log("\nExercise 2: Simple math");
-console.log(5 + 3);
-console.log(10 * 2);
-console.log(20 / 4);
+
+// Task 2
+const task2Result = `
+10 + 5 = ${10 + 5}
+20 - 8 = ${20 - 8}
+4 * 6 = ${4 * 6}
+15 / 3 = ${15 / 3}
+17 % 5 = ${17 % 5}
+`;
+
+document.querySelector("#task2Output").textContent = task2Result;
+
+
+// Task 3
+const task3Result = `
+Hello World
+I am 20 years old
+Price: 100 rupees
+`;
+
+document.querySelector("#task3Output").textContent = task3Result;
