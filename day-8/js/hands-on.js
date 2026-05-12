@@ -1,68 +1,86 @@
-// —— Task 1 ——
+//Task 1 Build a Student Object
+
 const student = {
-    name: "Anaya",
+    name: "Ananya",
     age: 21,
     city: "Jaipur",
-    course: "B.Tech",
-    marks: [82, 76, 91]
-};
-
-const task1Lines = [];
+    course: "BTech",
+    marks: [60,70,80]
+}
 
 console.log(student);
-task1Lines.push("1) console.log(student)");
-task1Lines.push(JSON.stringify(student, null, 2));
+console.log(student.name);       
+console.log(student.age);        
+console.log(student.marks[0]);  
 
-console.log(student.name, student.age, student.marks[0]);
-task1Lines.push("");
-task1Lines.push("2) console.log(name, age, first mark)");
-task1Lines.push(`${student.name} ${student.age} ${student.marks[0]}`);
-
-student.email = "anaya@example.com";
-student.age = 22;
-delete student.city;
+student.email = "anaya@example.com"; 
+student.age = 22;                   
+delete student.city;                
 
 console.log(student);
-task1Lines.push("");
-task1Lines.push("3) after email, age update, delete city — console.log(student)");
-task1Lines.push(JSON.stringify(student, null, 2));
 
-document.querySelector("#task1Output").textContent = task1Lines.join("\n");
 
-// —— Task 2 ——
+// Task 2 Method with this
+
 const bankAccount = {
     holder: "Aarav",
     balance: 5000,
-    deposit(amount) {
+
+    deposit(amount){
         this.balance += amount;
         return this.balance;
     },
-    withdraw(amount) {
-        if (this.balance >= amount) {
-            this.balance -= amount;
+
+    withdraw(amount){
+        if(amount <= this.balance){
+            this.balance -= amount
             return this.balance;
         }
-        return "Insufficient funds";
+        else{
+            return "insuffient balance";
+        }
+
     }
 };
 
-const task2Lines = [];
-task2Lines.push(`Start: holder = "${bankAccount.holder}", balance = ${bankAccount.balance}`);
-task2Lines.push("");
+console.log(bankAccount.deposit(1000));
+console.log(bankAccount.withdraw(2000));
+console.log(bankAccount.withdraw(10000));
 
-const afterDeposit = bankAccount.deposit(1000);
-console.log("deposit(1000) →", afterDeposit);
-task2Lines.push(`deposit(1000) → ${afterDeposit}`);
+// Task 3 Destructuring
 
-const afterWithdraw1 = bankAccount.withdraw(2000);
-console.log("withdraw(2000) →", afterWithdraw1);
-task2Lines.push(`withdraw(2000) → ${afterWithdraw1}`);
+const product = {
+  id: 101,
+  name: "Laptop",
+  price: 60000,
+  brand: "Dell",
+  stock: 5
+};
 
-const afterWithdraw2 = bankAccount.withdraw(10000);
-console.log("withdraw(10000) →", afterWithdraw2);
-task2Lines.push(`withdraw(10000) → ${JSON.stringify(afterWithdraw2)}`);
+const { name, price } = product;
 
-task2Lines.push("");
-task2Lines.push(`Final balance: ${bankAccount.balance}`);
+console.log(name);  
+console.log(price); 
 
-document.querySelector("#task2Output").textContent = task2Lines.join("\n");
+
+const { brand: make } = product;
+console.log(make); 
+
+const { warranty = "1 year" } = product;
+console.log(warranty); 
+
+
+//Object as Iterable
+
+const keys = Object.keys(student);
+console.log(keys);
+
+const values = Object.values(student);
+console.log(values);
+
+const entries = Object.entries(student);
+console.log(entries);
+
+entries.forEach(([keys, value]) => {
+    console.log(`${keys}: ${value}`);
+});

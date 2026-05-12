@@ -1,38 +1,166 @@
-// —— Task 1 — reference solution ——
-function area(length, width) {
-    return length * width;
+// task1
+function printGrade(marks){
+
+if (marks < 0 || marks > 100) {
+  console.log("Invalid marks");
+} 
+else if (marks >= 90) {
+  console.log("Grade is A");
+} 
+else if (marks >= 75) {
+  console.log("Grade is B");
+} 
+else if (marks >= 60) {
+  console.log("Grade is C");
+} 
+else {
+  console.log("Grade is F");
 }
 
-const areaArrow = (length, width) => length * width;
+}
 
-const lines1 = [];
-lines1.push("area(5, 3)  → " + area(5, 3));
-lines1.push("area(10, 4) → " + area(10, 4));
-lines1.push("area(7, 7)  → " + area(7, 7));
-lines1.push("");
-lines1.push("Bonus: areaArrow(8, 6) → " + areaArrow(8, 6));
+printGrade(75);
+printGrade(95);
+printGrade(50);
 
-console.log(area(5, 3));
-console.log(area(10, 4));
-console.log(area(7, 7));
-console.log(areaArrow(8, 6));
+//task2
+day = "Wednesday";
 
-document.querySelector("#task1Output").textContent = lines1.join("\n");
+switch (day) {
+  case "Monday":
+  case "Tuesday":
+  case "Wednesday":
+  case "Thursday":
+  case "Friday":
+    console.log("Weekday");
+    break;
 
-// —— Task 2 — reference solution ——
-const greet = (name = "Guest") => `Hello, ${name}!`;
+  case "Saturday":
+  case "Sunday":
+    console.log("Weekend");
+    break;
 
-const lines2 = [];
-lines2.push('greet("Priya") → ' + greet("Priya"));
-lines2.push('greet("Aarav") → ' + greet("Aarav"));
-lines2.push("greet()        → " + greet());
-lines2.push("");
-lines2.push("Bonus: greet(null) → " + greet(null));
-lines2.push("(Default runs only for undefined, not null.)");
+  default:
+    console.log("Invalid day");
+}
 
-console.log(greet("Priya"));
-console.log(greet("Aarav"));
-console.log(greet());
-console.log(greet(null));
+//task3
 
-document.querySelector("#task2Output").textContent = lines2.join("\n");
+
+if (0){
+    console.log("0 is a truthy value");
+}  
+else{
+    console.log("0 is a falsy value");
+} 
+
+
+if ("0") {
+  console.log('"0" is a truthy value');
+} else {
+  console.log('"0" is a falsy value');
+}
+
+if ("") {
+  console.log("empty string is a truthy value");
+} else {
+  console.log("empty string is a falsy value");
+}
+
+if (" ") {
+  console.log("string which has space inside it is truthy");
+} else {
+  console.log("string which has space inside it is falsy");
+}
+
+if (null) {
+  console.log("null is a truthy value");
+} else {
+  console.log("null is a falsy value");
+}
+
+if (undefined) {
+  console.log("undefined is a truthy value");
+} else {
+  console.log("undefined is a falsy value");
+}
+
+if (NaN) {
+  console.log("NaN is a truthy value");
+} else {
+  console.log("NaN is a falsy value");
+}
+
+if ([]) {
+  console.log("[] is a truthy value");
+} else {
+  console.log("[] is a falsy value");
+}
+
+if ({}) {
+  console.log("{} is a truthy value");
+} else {
+  console.log("{} is a falsy value");
+}
+
+if ("false") {
+  console.log("string false is truthy value");
+} else {
+  console.log("string false is falsy value");
+}
+
+// falsy values: false, 0, "", null, undefined, NaN
+
+//bonus task
+
+const user1 = {
+    isBanned : true,
+    age : 12
+}
+
+const user2 = {
+    isBanned : null,
+    age : 18
+}
+
+function canComment(user) {
+  if (user) {
+    if (!user.isBanned) {
+      if (user.age >= 13) {
+        console.log("Comment allowed");
+      }
+    }
+  }
+}
+
+function comment(user){
+    if(!user) return "comment not allowed";
+    if(user.isBanned) return "comment not allowed";
+    if(user.age >= 13) return "comment allowed"
+}
+
+console.log(comment(user1));
+console.log(comment(user2));
+
+const fruits = ["apple", "banana", "mango"];
+
+for(let i = 0; i < fruits.length; i++){
+console.log(fruits[i]);
+} 
+
+const Username = "Priya";
+for(let i = 0; i < Username.length; i++){
+console.log(Username[i]);
+} 
+
+const s = { name: "Aarav", age: 22 };
+// for (const k in s) console.log(k);
+
+// for (const k in s) console.log(k, s[k]);
+
+const keys = Object.keys(s);
+
+for (let i = 0; i < keys.length; i++) {
+    const key = keys[i];
+    console.log(key, s[key]);
+}

@@ -1,34 +1,68 @@
-const user = {
-    name: "Priya",
-    age: 24,
-    city: "Jaipur",
-    isActive: true,
-    hobbies: ["reading", "trekking"],
-    address: {
-        street: "MI Road",
-        pincode: "302001"
-    }
+// Day 8 - Objects: Code Snippets
+
+const topic1Snippet = `let person = {
+  name: "Aarav",
+  age: 25,
+  city: "Mumbai",
+  email: "aarav@example.com"
 };
 
-const topic1Snippet = `const user = ${JSON.stringify(user, null, 2)};
+console.log(person.name);      // "Aarav"
+console.log(person["age"]);    // 25`;
 
-console.log(user);`;
+const topic2Snippet = `let student = {
+  name: "Priya",
+  grade: 10
+};
 
-const topic2Snippet = `const user = { name: "Priya", age: 24, "favourite color": "blue" };
+student.age = 16;           // Add property
+student.grade = 11;         // Update property
+delete student.grade;       // Remove property
 
-// Dot — clean
-console.log(user.name);              // Priya
-console.log(user.age);               // 24
+console.log(student);`;
 
-// Bracket — when key is dynamic
-const field = "name";
-console.log(user[field]);            // Priya  ← variable
+const topic3Snippet = `let calculator = {
+  num1: 10,
+  num2: 5,
+  add: function() {
+    return this.num1 + this.num2;
+  },
+  multiply: function() {
+    return this.num1 * this.num2;
+  }
+};
 
-// Bracket — when key has spaces/special chars
-console.log(user["favourite color"]); // blue   (can't do user.favourite color)
+console.log(calculator.add());      // 15
+console.log(calculator.multiply()); // 50`;
 
-// Property doesn't exist? undefined — no error
-console.log(user.email);             // undefined`;
-
+// Inject snippets into HTML
 document.querySelector("#topic1Code code").textContent = topic1Snippet;
 document.querySelector("#topic2Code code").textContent = topic2Snippet;
+document.querySelector("#topic3Code code").textContent = topic3Snippet;
+
+// Run demonstrations
+console.log("=== Day 8: Objects ===");
+
+const u = { name: "Priya" };
+console.log(u.name);
+
+const f = "name";
+console.log(u[f]);
+
+const user = { name: "Riya", age: 23, city: "Jaipur", email: "r@x.in" };
+const { name, age } = user;
+console.log(name, age);
+
+const { name: userName, city } = user;
+console.log(userName, city);
+
+const { phone = "N/A" } = user;
+console.log(phone);
+
+const greet = ({ name, age }) => `Hi ${name}, age ${age}`;
+console.log(greet(user));
+
+const user1 = { name: "Anaya", age: 21, city: "Jaipur" };
+console.log(Object.keys(user1));
+console.log(Object.values(user1));
+console.log(Object.entries(user1));

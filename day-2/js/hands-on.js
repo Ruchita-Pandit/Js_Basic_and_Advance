@@ -1,41 +1,67 @@
-// —— Task 1 — reference solution ——
-const cart = ["bread", "milk", "eggs"];
+/*Task 1 Type Detective
 
-cart.push("butter");
-cart.unshift("rice");
+· Declare 5 variables — one of each type: string, number, boolean, null, and undefined.
 
-const lines1 = [];
-lines1.push('After push("butter") + unshift("rice"):');
-lines1.push(JSON.stringify(cart));
+· For each variable, use console.log() to print both the value AND its type using typeof.
 
-const removed = cart.pop();
-lines1.push("");
-lines1.push("pop() removed → " + JSON.stringify(removed));
-lines1.push("cart after pop → " + JSON.stringify(cart));
+· Example: console.log(myName, typeof myName) — prints both on one line.
 
-cart.splice(1, 1);
-lines1.push("");
-lines1.push("After splice(1, 1) → " + JSON.stringify(cart));
+· Try to get typeof to print all 5 different type labels.
 
-document.querySelector("#task1Output").textContent = lines1.join("\n");
+Task 2 Coercion Predictor
 
-// —— Task 2 — reference solution ——
-const scores = [88, 42, 75, 60, 91, 39, 55, 70];
+· Before running any code, write a comment next to each line predicting the output.
 
-const passing = scores.filter((s) => s >= 60);
-const firstFail = scores.find((s) => s < 60);
-const allPass = scores.every((s) => s >= 60);
-const anyAbove90 = scores.some((s) => s > 90);
+· Then run it and see how many you got right.
 
-console.log(passing);
-console.log(firstFail);
-console.log(allPass);
-console.log(anyAbove90);
+· Lines to test: console.log("10" + 5) | console.log("10" - 5) | console.log(true + true) | console.log("" + false) |
 
-const lines2 = [];
-lines2.push("filter (>= 60) → " + JSON.stringify(passing));
-lines2.push("find (first failing) → " + firstFail);
-lines2.push("every (all passing?) → " + allPass);
-lines2.push("Bonus: some (> 90?) → " + anyAbove90);
+console.log(null + 1)
 
-document.querySelector("#task2Output").textContent = lines2.join("\n");
+· Score yourself: how many did you predict correctly? Share in the chat.
+
+Task 3 String Toolbox
+
+· Create a const called fullName and assign your full name with extra spaces around it — e.g. ' Aarav
+
+Sharma '
+
+· Using string methods, log: (1) the name trimmed, (2) in ALL CAPS, (3) the number of characters after
+
+trimming, (4) whether it includes your first name.
+
+· Bonus: Use .slice() to extract just your first name from the trimmed string.
+ */
+
+
+const name = "John"
+const age = 22
+const isEmployed = true
+const emptyValue = null;      
+let notAssigned; 
+
+console.log(name, typeof(name));              
+console.log(age, typeof(age));                
+console.log(isEmployed, typeof(isEmployed));  
+console.log(emptyValue, typeof(emptyValue));  
+console.log(notAssigned, typeof(notAssigned));
+
+console.log("10" + 5);     
+console.log("10" - 5);    
+console.log(true + true);  
+console.log("" + false);   
+console.log(null + 1);
+
+const fullName = "   Gokulkrishna Vinod   ";
+
+const trimmed = fullName.trim();
+console.log(trimmed);
+
+console.log(trimmed.toUpperCase());
+
+console.log(trimmed.length);
+
+console.log(trimmed.includes("Gokulkrishna"));
+
+const firstName = trimmed.slice(0, 12);
+console.log(firstName);

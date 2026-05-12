@@ -1,20 +1,16 @@
-const names = ["Priya", "Aarav", "Riya"];
-const greetings = names.map((name) => `Hello, ${name}`);
+// Day 2 - Variables
+// Homework
 
-document.querySelector("#homeworkOut1").textContent =
-    "1) map → greetings:\n" + JSON.stringify(greetings);
+const fullName = "   Gokulkrishna Vinod   ";
+const age = 20;
+const city = "Kerala";
 
-const numbers = [3, 8, 4, 11, 6, 9, 2];
-const evens = numbers.filter((n) => n % 2 === 0);
-const evenSum = evens.reduce((sum, n) => sum + n, 0);
+console.log("Full Name (trimmed): " + fullName.trim());
+console.log("Upper case: " + fullName.trim().toUpperCase());
+console.log("Length: " + fullName.trim().length);
+console.log("Includes 'Gokul': " + fullName.includes("Gokul"));
 
-document.querySelector("#homeworkOut2").textContent =
-    "2) numbers: " +
-    JSON.stringify(numbers) +
-    "\n   filter (even) → " +
-    JSON.stringify(evens) +
-    "\n   reduce (sum) → " +
-    evenSum;
-
-console.log(greetings);
-console.log(evenSum);
+let price = 1000;
+let discount = 0.2;
+let finalPrice = price - (price * discount);
+console.log("Final price after 20% discount: ₹" + finalPrice);

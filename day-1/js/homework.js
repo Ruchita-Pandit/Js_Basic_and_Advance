@@ -1,24 +1,11 @@
-function kmToMiles(km) {
-    return km * 0.621;
-}
+// Day 1 - Basics
+// Homework
 
-function gstAmount(price, rate = 18) {
-    return price * (rate / 100);
-}
+let myName = "Gokul";
+let age = 20;
+let city = "Kerala";
 
-document.querySelector("#homeworkOut1").textContent =
-    "kmToMiles(10)     → " +
-    kmToMiles(10) +
-    "\n" +
-    "kmToMiles(100)    → " +
-    kmToMiles(100);
-
-document.querySelector("#homeworkOut2").textContent =
-    "gstAmount(1000)       → " +
-    gstAmount(1000) +
-    "   (18% default)\n" +
-    "gstAmount(1000, 12)   → " +
-    gstAmount(1000, 12);
-
-console.log(kmToMiles(10), kmToMiles(100));
-console.log(gstAmount(1000), gstAmount(1000, 12));
+console.log("My name is " + myName);
+console.log("My age is " + age);
+console.log("I live in " + city);
+console.log("This year I'll be " + (age + 1) + " years old");

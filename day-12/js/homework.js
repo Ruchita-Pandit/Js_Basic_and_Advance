@@ -1,20 +1,31 @@
-const names = ["Priya", "Aarav", "Riya"];
-const greetings = names.map((name) => `Hello, ${name}`);
+// Exercise 1: Safe Array Access
+let arrayIndexInput = document.querySelector("#array-index");
+let accessArrayBtn = document.querySelector("#access-array");
+let arrayOutput = document.querySelector("#array-output");
 
-document.querySelector("#homeworkOut1").textContent =
-    "1) map → greetings:\n" + JSON.stringify(greetings);
+const testArray = [10, 20, 30];
 
-const numbers = [3, 8, 4, 11, 6, 9, 2];
-const evens = numbers.filter((n) => n % 2 === 0);
-const evenSum = evens.reduce((sum, n) => sum + n, 0);
+function getArrayElement(arr, index) {
+  try {
+    if (!Array.isArray(arr)) {
+      throw new Error("First argument must be an array");
+    }
+    if (index < 0 || index >= arr.length) {
+      throw new Error("Index out of bounds");
+    }
+    return arr[index];
+  } catch (e) {
+    console.log("Error:", e.message);
+    throw e;
+  }
+}
 
-document.querySelector("#homeworkOut2").textContent =
-    "2) numbers: " +
-    JSON.stringify(numbers) +
-    "\n   filter (even) → " +
-    JSON.stringify(evens) +
-    "\n   reduce (sum) → " +
-    evenSum;
-
-console.log(greetings);
-console.log(evenSum);
+accessArrayBtn.addEventListener("click", function() {
+  try {
+    let index = Number(arrayIndexInput.value);
+    let result = getArrayElement(testArray, index);
+    arrayOutput.innerHTML = `<span style='color: green;'>✓ Element at index ${index}: ${result}</span>`;
+  } catch (e) {
+    arrayOutput.innerHTML = `<span style='color: red;'>✗ Error: ${e.message}</span>`;
+  }
+});

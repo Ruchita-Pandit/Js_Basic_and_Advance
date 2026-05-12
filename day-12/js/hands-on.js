@@ -1,41 +1,77 @@
-// —— Task 1 — reference solution ——
-const cart = ["bread", "milk", "eggs"];
+// Task 1: Basic try-catch
+let divideAInput = document.querySelector("#divide-a");
+let divideBInput = document.querySelector("#divide-b");
+let divideBtn = document.querySelector("#divide-btn");
+let divideOutput = document.querySelector("#divide-output");
 
-cart.push("butter");
-cart.unshift("rice");
+function divide(a, b) {
+  if (b === 0) {
+    throw new Error("Cannot divide by zero");
+  }
+  return a / b;
+}
 
-const lines1 = [];
-lines1.push('After push("butter") + unshift("rice"):');
-lines1.push(JSON.stringify(cart));
+divideBtn.addEventListener("click", function() {
+  try {
+    let a = Number(divideAInput.value);
+    let b = Number(divideBInput.value);
+    let result = divide(a, b);
+    divideOutput.innerHTML = `<span style='color: green;'>✓ Result: ${a} ÷ ${b} = ${result}</span>`;
+    console.log("Result:", result);
+  } catch (e) {
+    divideOutput.innerHTML = `<span style='color: red;'>✗ Error: ${e.message}</span>`;
+    console.log("Error:", e.message);
+  }
+});
 
-const removed = cart.pop();
-lines1.push("");
-lines1.push("pop() removed → " + JSON.stringify(removed));
-lines1.push("cart after pop → " + JSON.stringify(cart));
 
-cart.splice(1, 1);
-lines1.push("");
-lines1.push("After splice(1, 1) → " + JSON.stringify(cart));
+// Task 2: Validate Input
+let userNameInput = document.querySelector("#user-name");
+let userEmailInput = document.querySelector("#user-email");
+let validateUserBtn = document.querySelector("#validate-user");
+let userOutput = document.querySelector("#user-output");
 
-document.querySelector("#task1Output").textContent = lines1.join("\n");
+function processUser(data) {
+  try {
+    if (!data) throw new Error("Data is required");
+    if (!data.name) throw new Error("Name is required");
+    if (!data.email) throw new Error("Email is required");
+    
+    console.log("User valid:", data.name);
+    return `User valid: ${data.name}`;
+  } catch (error) {
+    console.log("Validation error:", error.message);
+    throw error;
+  }
+}
 
-// —— Task 2 — reference solution ——
-const scores = [88, 42, 75, 60, 91, 39, 55, 70];
+validateUserBtn.addEventListener("click", function() {
+  try {
+    let userData = {
+      name: userNameInput.value,
+      email: userEmailInput.value
+    };
+    let result = processUser(userData);
+    userOutput.innerHTML = `<span style='color: green;'>✓ ${result}</span>`;
+  } catch (error) {
+    userOutput.innerHTML = `<span style='color: red;'>✗ ${error.message}</span>`;
+  }
+});
 
-const passing = scores.filter((s) => s >= 60);
-const firstFail = scores.find((s) => s < 60);
-const allPass = scores.every((s) => s >= 60);
-const anyAbove90 = scores.some((s) => s > 90);
 
-console.log(passing);
-console.log(firstFail);
-console.log(allPass);
-console.log(anyAbove90);
+// Task 3: Parse JSON Safely
+let jsonInput = document.querySelector("#json-input");
+let parseJsonBtn = document.querySelector("#parse-json");
+let jsonOutput = document.querySelector("#json-output");
 
-const lines2 = [];
-lines2.push("filter (>= 60) → " + JSON.stringify(passing));
-lines2.push("find (first failing) → " + firstFail);
-lines2.push("every (all passing?) → " + allPass);
-lines2.push("Bonus: some (> 90?) → " + anyAbove90);
-
-document.querySelector("#task2Output").textContent = lines2.join("\n");
+parseJsonBtn.addEventListener("click", function() {
+  try {
+    let jsonString = jsonInput.value;
+    let data = JSON.parse(jsonString);
+    jsonOutput.innerHTML = `<span style='color: green;'>✓ Parsed: ${JSON.stringify(data)}</span>`;
+    console.log(data);
+  } catch (error) {
+    jsonOutput.innerHTML = `<span style='color: red;'>✗ Invalid JSON: ${error.message}</span>`;
+    console.log("Invalid JSON:", error.message);
+  }
+});

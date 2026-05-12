@@ -1,33 +1,53 @@
-const topic1Snippet = `const fruits = ["apple", "banana", "mango"];
+// Day 5 - Loops: Code Snippets
 
-console.log(fruits[0]);                   // apple
-console.log(fruits[2]);                   // mango
-console.log(fruits.length);               // 3
-console.log(fruits[fruits.length - 1]);   // mango (last)
+const topic1Snippet = `for (let i = 0; i < 5; i++) {
+  console.log(i);
+}`;
 
-// Modify an element
-fruits[1] = "cherry";
-console.log(fruits);                      // ["apple", "cherry", "mango"]
+const topic2Snippet = `let count = 0;
+while (count < 5) {
+  console.log(count);
+  count++;
+}`;
 
-// Negative index? No — undefined
-console.log(fruits[-1]);                  // undefined  (use .at(-1) instead)
-console.log(fruits.at(-1));               // mango`;
+const topic3Snippet = `let fruits = ["apple", "banana", "orange"];
+for (let fruit of fruits) {
+  console.log(fruit);
+}`;
 
-const topic2Snippet = `const cart = ["apple", "banana"];
+const topic4Snippet = `let person = { name: "Alice", age: 25, city: "Delhi" };
+for (let key in person) {
+  console.log(key + ": " + person[key]);
+}`;
 
-cart.push("mango");        // ["apple", "banana", "mango"]
-cart.pop();                // ["apple", "banana"], returns "mango"
-cart.unshift("orange");    // ["orange", "apple", "banana"]
-cart.shift();              // ["apple", "banana"], returns "orange"
-
-// splice(start, deleteCount, ...itemsToInsert)
-const items = ["a", "b", "c", "d"];
-items.splice(1, 2);        // remove 2 items starting at index 1
-console.log(items);        // ["a", "d"]
-
-const more = ["a", "b", "c"];
-more.splice(1, 0, "X", "Y");   // insert at 1, delete 0
-console.log(more);             // ["a", "X", "Y", "b", "c"]`;
-
+// Inject snippets into HTML
 document.querySelector("#topic1Code code").textContent = topic1Snippet;
 document.querySelector("#topic2Code code").textContent = topic2Snippet;
+document.querySelector("#topic3Code code").textContent = topic3Snippet;
+document.querySelector("#topic4Code code").textContent = topic4Snippet;
+
+// Run demonstrations
+console.log("=== Day 5: Loops ===");
+console.log("for loop:");
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+
+console.log("\nwhile loop:");
+let j = 0;
+while (j < 5) {
+  console.log(j);
+  j++;
+}
+
+console.log("\nfor...of:");
+let fruits = ["apple", "banana", "orange"];
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+
+console.log("\nfor...in:");
+let person = { name: "Alice", age: 25, city: "Delhi" };
+for (let key in person) {
+  console.log(key + ": " + person[key]);
+}

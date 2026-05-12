@@ -1,28 +1,26 @@
-/* firstName – not first_name or FirstName
-MAX_SIZE or API_URL — use ALL_CAPS_WITH_UNDERSCORES
-const AnimalClass */
+// Day 1 - Basics: Code Snippets
 
-// Good naming
-const firstName = "Arjun";
-const totalScore = 95;
-const MAX_RETRIES = 3;
+const topic1Snippet = `console.log("Hello, World!");`;
 
-// Bad naming — avoid
-const fn = "Arjun"; // too short, meaningless
-const first_name = "Arjun"; // snake_case — not JS convention
+const topic2Snippet = `console.log(2 + 3);
+console.log("Name: " + "Gokul");
+console.log(10 > 5);`;
 
-const result = [
-  `Good naming :`,
-  `firstName = ${firstName}`,
-  `totalScore = ${totalScore}`,
-  `MAX_RETRIES = ${MAX_RETRIES}`,
-  ``,
-  `Bad naming :`,
-  `fn = ${fn}`,
-  `first_name = ${first_name}`
-];
+const topic3Snippet = `// This is a comment
+console.log("This runs"); // This comment explains the line above
 
-console.log(result.join("\n"));
+/* This is a multi-line comment
+   It can span multiple lines
+   Useful for longer explanations */`;
 
-document.querySelector("#namingOutput code").textContent =
-  result.join("\n");
+// Inject snippets into HTML
+document.querySelector("#topic1Code code").textContent = topic1Snippet;
+document.querySelector("#topic2Code code").textContent = topic2Snippet;
+document.querySelector("#topic3Code code").textContent = topic3Snippet;
+
+// Run demonstrations
+console.log("=== Day 1: Basics ===");
+console.log("Hello, World!");
+console.log(2 + 3);
+console.log("Name: " + "Gokul");
+console.log(10 > 5);

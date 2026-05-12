@@ -1,22 +1,27 @@
 const book = {
-    title: "The Guide",
-    author: "R. K. Narayan",
-    year: 1958,
-    pages: 240,
-    summary() {
-        return `${this.title} by ${this.author} (${this.year})`;
-    }
+  title: "Wings of fire",
+  author: "A P J Abdul Kalam",
+  year: 2018,
+  pages: 320
 };
 
 const key = "title";
+console.log(book[key]); 
 
-console.log(book[key]);
+book.summary = function () {
+  return `${this.title} by ${this.author} (${this.year})`;
+};
 
-const lines = [];
-lines.push(`Variable key: ${JSON.stringify(key)}`);
-lines.push(`book[key] (title): ${book[key]}`);
-lines.push("");
-lines.push("summary():");
-lines.push(book.summary());
+console.log(book.summary());
 
-document.querySelector("#homeworkOutput").textContent = lines.join("\n");
+Object.entries(book).forEach(([key, value]) => {
+  console.log(`${key}: ${value}`);
+});
+
+const bookCopy = { ...book };
+
+bookCopy.year = 2020;
+bookCopy.title = "Modified Book";
+
+console.log(book);
+console.log(bookCopy);

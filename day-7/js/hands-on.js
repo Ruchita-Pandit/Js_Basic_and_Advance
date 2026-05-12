@@ -1,41 +1,53 @@
-// —— Task 1 — reference solution ——
+
+//Task 1 Cart Manipulation
 const cart = ["bread", "milk", "eggs"];
 
 cart.push("butter");
 cart.unshift("rice");
 
-const lines1 = [];
-lines1.push('After push("butter") + unshift("rice"):');
-lines1.push(JSON.stringify(cart));
+console.log(cart);
 
-const removed = cart.pop();
-lines1.push("");
-lines1.push("pop() removed → " + JSON.stringify(removed));
-lines1.push("cart after pop → " + JSON.stringify(cart));
-
+cart.pop()
+console.log(cart);
 cart.splice(1, 1);
-lines1.push("");
-lines1.push("After splice(1, 1) → " + JSON.stringify(cart));
+console.log(cart);
 
-document.querySelector("#task1Output").textContent = lines1.join("\n");
+//Task 2 Filter Passing Scores
 
-// —— Task 2 — reference solution ——
 const scores = [88, 42, 75, 60, 91, 39, 55, 70];
+const passing = scores.filter(score => score >= 60);
+console.log(passing); 
 
-const passing = scores.filter((s) => s >= 60);
-const firstFail = scores.find((s) => s < 60);
-const allPass = scores.every((s) => s >= 60);
-const anyAbove90 = scores.some((s) => s > 90);
+const firstFail = scores.find(score => score < 60);
+console.log(firstFail); 
 
-console.log(passing);
-console.log(firstFail);
-console.log(allPass);
-console.log(anyAbove90);
+const allPassing = scores.every(score => score >= 60);
+console.log(allPassing); 
 
-const lines2 = [];
-lines2.push("filter (>= 60) → " + JSON.stringify(passing));
-lines2.push("find (first failing) → " + firstFail);
-lines2.push("every (all passing?) → " + allPass);
-lines2.push("Bonus: some (> 90?) → " + anyAbove90);
+const anyAbove90 = scores.some(score => score > 90);
+console.log(anyAbove90); 
 
-document.querySelector("#task2Output").textContent = lines2.join("\n");
+
+//Task 3 Map Prices with GST
+const prices = [100, 250, 500, 1200, 80];
+const withGST = prices.map(price => price * 1.18);
+
+console.log("Original:", prices);
+console.log("With GST:", withGST);
+
+const withGSTRounded = withGST.map(price => price.toFixed(2));
+
+console.log(withGSTRounded);
+
+//Bonus: Reduce to Total
+
+const expenses = [250, 800, 120, 50, 1500, 75];
+const totalExpense = expenses.reduce((total, expense) => total + expense, 0);
+console.log(totalExpense);
+
+const highestExpense = expenses.reduce((max, expense) => expense > max ? expense : max, expenses[0]);
+console.log(highestExpense);
+
+const totalExpenseAbove100 = expenses.filter(expense => expense > 100).reduce((total, expense) => total + expense, 0);
+console.log(totalExpenseAbove100);
+

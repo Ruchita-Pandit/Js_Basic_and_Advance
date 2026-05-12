@@ -1,24 +1,56 @@
-function kmToMiles(km) {
-    return km * 0.621;
-}
+// Exercise 1: Form Validation
+let loginForm = document.querySelector("#login-form");
+let formResult = document.querySelector("#form-result");
 
-function gstAmount(price, rate = 18) {
-    return price * (rate / 100);
-}
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  
+  let name = document.querySelector("#form-name").value;
+  let email = document.querySelector("#form-email").value;
+  
+  if (name === "" || email === "") {
+    formResult.innerHTML = "<span style='color: red;'>❌ All fields required!</span>";
+    console.log("All fields required!");
+  } else {
+    formResult.innerHTML = "<span style='color: green;'>✓ Form valid, submitted successfully!</span>";
+    console.log("Form valid, submitting...");
+  }
+});
 
-document.querySelector("#homeworkOut1").textContent =
-    "kmToMiles(10)     → " +
-    kmToMiles(10) +
-    "\n" +
-    "kmToMiles(100)    → " +
-    kmToMiles(100);
 
-document.querySelector("#homeworkOut2").textContent =
-    "gstAmount(1000)       → " +
-    gstAmount(1000) +
-    "   (18% default)\n" +
-    "gstAmount(1000, 12)   → " +
-    gstAmount(1000, 12);
+// Exercise 2: Dynamic Event Listeners
+let items = document.querySelectorAll(".item");
 
-console.log(kmToMiles(10), kmToMiles(100));
-console.log(gstAmount(1000), gstAmount(1000, 12));
+items.forEach((item) => {
+  item.addEventListener("click", function() {
+    console.log("Clicked:", this.textContent);
+    this.style.backgroundColor = "#C8E6C9";
+  });
+  
+  item.addEventListener("mouseenter", function() {
+    this.style.transform = "scale(1.05)";
+    this.style.boxShadow = "0 2px 8px rgba(0,0,0,0.1)";
+  });
+  
+  item.addEventListener("mouseleave", function() {
+    this.style.transform = "scale(1)";
+    this.style.boxShadow = "none";
+  });
+});
+
+
+// Exercise 3: Keyboard Events
+let keyDisplay = document.querySelector("#key-display");
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    keyDisplay.textContent = "⏎ Enter key pressed!";
+    console.log("Enter pressed");
+  } else if (e.key === "Escape") {
+    keyDisplay.textContent = "⎋ Escape key pressed!";
+    console.log("Escape pressed");
+  } else {
+    keyDisplay.textContent = "🔑 Key pressed: " + e.key;
+    console.log("Pressed:", e.key);
+  }
+});

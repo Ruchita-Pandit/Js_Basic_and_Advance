@@ -1,38 +1,56 @@
-// —— Task 1 — reference solution ——
+//Task 1 Rectangle Area
 function area(length, width) {
-    return length * width;
+  return length * width;
 }
 
-const areaArrow = (length, width) => length * width;
+console.log(area(5, 10));   
+console.log(area(7, 3));   
+console.log(area(12, 4));   
 
-const lines1 = [];
-lines1.push("area(5, 3)  → " + area(5, 3));
-lines1.push("area(10, 4) → " + area(10, 4));
-lines1.push("area(7, 7)  → " + area(7, 7));
-lines1.push("");
-lines1.push("Bonus: areaArrow(8, 6) → " + areaArrow(8, 6));
+const areafn = (length, width) => length * width;
 
-console.log(area(5, 3));
-console.log(area(10, 4));
-console.log(area(7, 7));
-console.log(areaArrow(8, 6));
+console.log(areafn(5, 10));
+console.log(areafn(7, 3));
+console.log(areafn(12, 4));
 
-document.querySelector("#task1Output").textContent = lines1.join("\n");
 
-// —— Task 2 — reference solution ——
-const greet = (name = "Guest") => `Hello, ${name}!`;
+function greetName(name = "Guest") {
+  return `Hello, ${name}!`;
+}
 
-const lines2 = [];
-lines2.push('greet("Priya") → ' + greet("Priya"));
-lines2.push('greet("Aarav") → ' + greet("Aarav"));
-lines2.push("greet()        → " + greet());
-lines2.push("");
-lines2.push("Bonus: greet(null) → " + greet(null));
-lines2.push("(Default runs only for undefined, not null.)");
+console.log(greetName("Priya")); 
+console.log(greetName("Aarav")); 
+console.log(greetName());         
+console.log(greetName(null));  //default parameter only gets triggered for undefined
 
-console.log(greet("Priya"));
-console.log(greet("Aarav"));
-console.log(greet());
-console.log(greet(null));
+//Task 3 Temperature Converter
+const temperature = (temp) => (temp * 9/5) + 32
+console.log(temperature(0));
+console.log(temperature(100));
+console.log(temperature(37));
+console.log(temperature(45));
 
-document.querySelector("#task2Output").textContent = lines2.join("\n");
+
+
+//Bonus Pure vs Impure
+
+function double(n) {
+  return n * 2;
+}
+
+console.log(double(2));  
+console.log(double(5));  
+console.log(double(10)); 
+
+let total = 0;
+
+function addToTotal(n) {
+  total += n;   
+  return total;
+}
+
+console.log(addToTotal(2));  
+console.log(addToTotal(5)); 
+console.log(addToTotal(10)); 
+
+

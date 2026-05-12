@@ -1,22 +1,21 @@
-const book = {
-    title: "The Guide",
-    author: "R. K. Narayan",
-    year: 1958,
-    pages: 240,
-    summary() {
-        return `${this.title} by ${this.author} (${this.year})`;
-    }
-};
+// Day 3 - Operators
+// Homework
 
-const key = "title";
+let a = 20;
+let b = 7;
 
-console.log(book[key]);
+console.log("Addition: " + (a + b));
+console.log("Subtraction: " + (a - b));
+console.log("Multiplication: " + (a * b));
+console.log("Division: " + (a / b));
+console.log("Modulus: " + (a % b));
 
-const lines = [];
-lines.push(`Variable key: ${JSON.stringify(key)}`);
-lines.push(`book[key] (title): ${book[key]}`);
-lines.push("");
-lines.push("summary():");
-lines.push(book.summary());
+// Comparison
+console.log("a > b: " + (a > b));
+console.log("a == b: " + (a == b));
+console.log("a === '20': " + (a === "20"));
 
-document.querySelector("#homeworkOutput").textContent = lines.join("\n");
+// Logical
+console.log("(a > 15) && (b < 10): " + ((a > 15) && (b < 10)));
+console.log("(a > 25) || (b < 10): " + ((a > 25) || (b < 10)));
+console.log("!(a > 25): " + (!(a > 25)));

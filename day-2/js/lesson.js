@@ -1,33 +1,46 @@
-const topic1Snippet = `const fruits = ["apple", "banana", "mango"];
+// Day 2 - Variables: Code Snippets
 
-console.log(fruits[0]);                   // apple
-console.log(fruits[2]);                   // mango
-console.log(fruits.length);               // 3
-console.log(fruits[fruits.length - 1]);   // mango (last)
+const topic1Snippet = `var name = "Alice";
+let age = 25;
+const country = "India";`;
 
-// Modify an element
-fruits[1] = "cherry";
-console.log(fruits);                      // ["apple", "cherry", "mango"]
+const topic2Snippet = `let firstName = "John";
+let _age = 30;
+let $price = 100;`;
 
-// Negative index? No — undefined
-console.log(fruits[-1]);                  // undefined  (use .at(-1) instead)
-console.log(fruits.at(-1));               // mango`;
+const topic3Snippet = `var x = 1;  // Can be redeclared and reassigned
+let y = 2;  // Cannot be redeclared, can be reassigned
+const z = 3; // Cannot be redeclared or reassigned`;
 
-const topic2Snippet = `const cart = ["apple", "banana"];
-
-cart.push("mango");        // ["apple", "banana", "mango"]
-cart.pop();                // ["apple", "banana"], returns "mango"
-cart.unshift("orange");    // ["orange", "apple", "banana"]
-cart.shift();              // ["apple", "banana"], returns "orange"
-
-// splice(start, deleteCount, ...itemsToInsert)
-const items = ["a", "b", "c", "d"];
-items.splice(1, 2);        // remove 2 items starting at index 1
-console.log(items);        // ["a", "d"]
-
-const more = ["a", "b", "c"];
-more.splice(1, 0, "X", "Y");   // insert at 1, delete 0
-console.log(more);             // ["a", "X", "Y", "b", "c"]`;
-
+// Inject snippets into HTML
 document.querySelector("#topic1Code code").textContent = topic1Snippet;
 document.querySelector("#topic2Code code").textContent = topic2Snippet;
+document.querySelector("#topic3Code code").textContent = topic3Snippet;
+
+// Run demonstrations
+console.log("=== Day 2: Variables ===");
+var x = 10;
+let y = 20;
+const z = 30;
+
+console.log(x, typeof x);
+console.log(y, typeof y);
+console.log(z, typeof z);
+
+function testVar() {
+  if (true) {
+    var v = "var";
+  }
+  console.log("var accessible in function:", v);
+}
+
+testVar();
+
+function testLet() {
+  if (true) {
+    let l = "let";
+  }
+  console.log("let is block-scoped");
+}
+
+testLet();

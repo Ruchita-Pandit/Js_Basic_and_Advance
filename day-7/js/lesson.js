@@ -1,33 +1,65 @@
-const topic1Snippet = `const fruits = ["apple", "banana", "mango"];
+// Day 7 - Arrays: Code Snippets
 
-console.log(fruits[0]);                   // apple
-console.log(fruits[2]);                   // mango
-console.log(fruits.length);               // 3
-console.log(fruits[fruits.length - 1]);   // mango (last)
+const topic1Snippet = `let fruits = ["Apple", "Banana", "Orange"];
+let numbers = [10, 20, 30, 40];
+let mixed = [1, "Hello", true, 3.14];
 
-// Modify an element
-fruits[1] = "cherry";
-console.log(fruits);                      // ["apple", "cherry", "mango"]
+console.log(fruits[0]);    // "Apple"
+console.log(numbers[2]);   // 30`;
 
-// Negative index? No — undefined
-console.log(fruits[-1]);                  // undefined  (use .at(-1) instead)
-console.log(fruits.at(-1));               // mango`;
+const topic2Snippet = `let arr = [1, 2, 3];
 
-const topic2Snippet = `const cart = ["apple", "banana"];
+arr.push(4);           // Add to end
+console.log(arr);      // [1, 2, 3, 4]
 
-cart.push("mango");        // ["apple", "banana", "mango"]
-cart.pop();                // ["apple", "banana"], returns "mango"
-cart.unshift("orange");    // ["orange", "apple", "banana"]
-cart.shift();              // ["apple", "banana"], returns "orange"
+arr.pop();             // Remove from end
+console.log(arr);      // [1, 2, 3]
 
-// splice(start, deleteCount, ...itemsToInsert)
-const items = ["a", "b", "c", "d"];
-items.splice(1, 2);        // remove 2 items starting at index 1
-console.log(items);        // ["a", "d"]
+arr.unshift(0);        // Add to start
+console.log(arr);      // [0, 1, 2, 3]
 
-const more = ["a", "b", "c"];
-more.splice(1, 0, "X", "Y");   // insert at 1, delete 0
-console.log(more);             // ["a", "X", "Y", "b", "c"]`;
+console.log(arr.length);  // 4`;
 
+const topic3Snippet = `let items = ["Book", "Pen", "Notebook"];
+
+for (let i = 0; i < items.length; i++) {
+  console.log(items[i]);
+}
+
+// Or use forEach
+items.forEach(function(item) {
+  console.log(item);
+});`;
+
+// Inject snippets into HTML
 document.querySelector("#topic1Code code").textContent = topic1Snippet;
 document.querySelector("#topic2Code code").textContent = topic2Snippet;
+document.querySelector("#topic3Code code").textContent = topic3Snippet;
+
+// Run demonstrations
+console.log("=== Day 7: Arrays ===");
+
+let arr = [1, 2, 3, 4, 5];
+
+console.log("Original: " + arr);
+
+arr.push(6);
+console.log("After push(6): " + arr);
+
+arr.pop();
+console.log("After pop(): " + arr);
+
+arr.unshift(0);
+console.log("After unshift(0): " + arr);
+
+arr.shift();
+console.log("After shift(): " + arr);
+
+console.log("indexOf(3): " + arr.indexOf(3));
+console.log("includes(4): " + arr.includes(4));
+
+console.log("slice(1, 4): " + arr.slice(1, 4));
+
+arr.forEach(function(num) {
+  console.log("Number: " + num);
+});

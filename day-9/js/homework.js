@@ -1,22 +1,29 @@
-const book = {
-    title: "The Guide",
-    author: "R. K. Narayan",
-    year: 1958,
-    pages: 240,
-    summary() {
-        return `${this.title} by ${this.author} (${this.year})`;
-    }
+// Day 9 - Modern Syntax
+// Homework
+
+// Rest parameters in functions
+function joinNames(separator, ...names) {
+  return names.join(separator);
+}
+
+console.log(joinNames(", ", "Priya", "Aarav", "Riya"));
+console.log(joinNames(" - ", "Alice", "Bob", "Charlie"));
+
+// Merging objects with spread
+let userDefaults = { theme: "light", fontSize: 14, lang: "en" };
+let userSettings = { theme: "dark", fontSize: 18 };
+let final = { ...userDefaults, ...userSettings };
+console.log("Final settings: ", final);
+
+// Nested destructuring
+let student = {
+  id: 101,
+  name: "Gokul",
+  grades: {
+    math: 95,
+    english: 88
+  }
 };
 
-const key = "title";
-
-console.log(book[key]);
-
-const lines = [];
-lines.push(`Variable key: ${JSON.stringify(key)}`);
-lines.push(`book[key] (title): ${book[key]}`);
-lines.push("");
-lines.push("summary():");
-lines.push(book.summary());
-
-document.querySelector("#homeworkOutput").textContent = lines.join("\n");
+let { name, grades: { math } } = student;
+console.log(`${name} scored ${math} in math`);

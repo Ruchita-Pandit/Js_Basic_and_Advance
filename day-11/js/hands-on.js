@@ -1,38 +1,46 @@
-// —— Task 1 — reference solution ——
-function area(length, width) {
-    return length * width;
-}
+// Task 1: Button Click Handler
+let myBtn = document.querySelector("#my-btn");
+let clickCounter = document.querySelector("#click-counter");
+let taskClicks = 0;
 
-const areaArrow = (length, width) => length * width;
+myBtn.addEventListener("click", () => {
+  taskClicks++;
+  clickCounter.textContent = "Total Clicks: " + taskClicks;
+  console.log("Button clicked!");
+});
 
-const lines1 = [];
-lines1.push("area(5, 3)  → " + area(5, 3));
-lines1.push("area(10, 4) → " + area(10, 4));
-lines1.push("area(7, 7)  → " + area(7, 7));
-lines1.push("");
-lines1.push("Bonus: areaArrow(8, 6) → " + areaArrow(8, 6));
+// Multiple listeners
+myBtn.addEventListener("click", () => {
+  console.log("Second handler also fires");
+});
 
-console.log(area(5, 3));
-console.log(area(10, 4));
-console.log(area(7, 7));
-console.log(areaArrow(8, 6));
 
-document.querySelector("#task1Output").textContent = lines1.join("\n");
+// Task 2: Input Event
+let nameInput = document.querySelector("#name-input");
+let nameDisplay = document.querySelector("#name-display");
 
-// —— Task 2 — reference solution ——
-const greet = (name = "Guest") => `Hello, ${name}!`;
+nameInput.addEventListener("input", (e) => {
+  nameDisplay.textContent = "You typed: " + e.target.value;
+  console.log("User typed:", e.target.value);
+});
 
-const lines2 = [];
-lines2.push('greet("Priya") → ' + greet("Priya"));
-lines2.push('greet("Aarav") → ' + greet("Aarav"));
-lines2.push("greet()        → " + greet());
-lines2.push("");
-lines2.push("Bonus: greet(null) → " + greet(null));
-lines2.push("(Default runs only for undefined, not null.)");
 
-console.log(greet("Priya"));
-console.log(greet("Aarav"));
-console.log(greet());
-console.log(greet(null));
+// Task 3: Event Delegation
+let todoList = document.querySelector("#todo-list");
 
-document.querySelector("#task2Output").textContent = lines2.join("\n");
+todoList.addEventListener("click", (e) => {
+  if (e.target.tagName === "LI") {
+    let id = e.target.getAttribute("data-id");
+    console.log("Clicked item with id:", id);
+    e.target.classList.toggle("done");
+    
+    // Visual feedback
+    if (e.target.style.backgroundColor === "rgb(144, 238, 144)") {
+      e.target.style.backgroundColor = "white";
+      e.target.style.textDecoration = "none";
+    } else {
+      e.target.style.backgroundColor = "#90EE90";
+      e.target.style.textDecoration = "line-through";
+    }
+  }
+});

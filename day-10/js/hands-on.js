@@ -1,68 +1,74 @@
-// —— Task 1 ——
-const student = {
-    name: "Anaya",
-    age: 21,
-    city: "Jaipur",
-    course: "B.Tech",
-    marks: [82, 76, 91]
-};
+// Task 1: DOM Selection
+// Click button to see elements selected in console
 
-const task1Lines = [];
+let selectBtn = document.querySelector("#select-btn");
 
-console.log(student);
-task1Lines.push("1) console.log(student)");
-task1Lines.push(JSON.stringify(student, null, 2));
+selectBtn.addEventListener("click", function() {
+  // Select elements from the page
+  let heading = document.querySelector("h1");
+  let box = document.querySelector(".box");
+  let items = document.querySelectorAll("li");
 
-console.log(student.name, student.age, student.marks[0]);
-task1Lines.push("");
-task1Lines.push("2) console.log(name, age, first mark)");
-task1Lines.push(`${student.name} ${student.age} ${student.marks[0]}`);
+  // Check what you selected
+  console.log("=== Task 1: Selection ===");
+  console.log("Heading:", heading);
+  console.log("Box:", box);
+  console.log("Number of items:", items.length);
+  console.log("All items:", items);
+  
+  selectBtn.textContent = "Check console (F12)";
+});
 
-student.email = "anaya@example.com";
-student.age = 22;
-delete student.city;
 
-console.log(student);
-task1Lines.push("");
-task1Lines.push("3) after email, age update, delete city — console.log(student)");
-task1Lines.push(JSON.stringify(student, null, 2));
+// Task 2: Modify Content
+// Click button to change content and styling
 
-document.querySelector("#task1Output").textContent = task1Lines.join("\n");
+let modifyBtn = document.querySelector("#modify-btn");
 
-// —— Task 2 ——
-const bankAccount = {
-    holder: "Aarav",
-    balance: 5000,
-    deposit(amount) {
-        this.balance += amount;
-        return this.balance;
-    },
-    withdraw(amount) {
-        if (this.balance >= amount) {
-            this.balance -= amount;
-            return this.balance;
-        }
-        return "Insufficient funds";
-    }
-};
+modifyBtn.addEventListener("click", function() {
+  let title = document.querySelector("#title");
+  if (title) {
+    title.querySelector("h4").textContent = "Welcome to JavaScript!";
+    title.style.backgroundColor = "#90EE90";
+  }
 
-const task2Lines = [];
-task2Lines.push(`Start: holder = "${bankAccount.holder}", balance = ${bankAccount.balance}`);
-task2Lines.push("");
+  let paragraphs = document.querySelectorAll("p");
+  paragraphs.forEach(function(p) {
+    p.style.color = "#1976D2";
+    p.style.fontSize = "16px";
+    p.style.fontWeight = "bold";
+  });
+  
+  modifyBtn.textContent = "Content Modified!";
+  modifyBtn.disabled = true;
+});
 
-const afterDeposit = bankAccount.deposit(1000);
-console.log("deposit(1000) →", afterDeposit);
-task2Lines.push(`deposit(1000) → ${afterDeposit}`);
 
-const afterWithdraw1 = bankAccount.withdraw(2000);
-console.log("withdraw(2000) →", afterWithdraw1);
-task2Lines.push(`withdraw(2000) → ${afterWithdraw1}`);
+// Task 3: Create Elements
+// Click button to dynamically create and add new elements
 
-const afterWithdraw2 = bankAccount.withdraw(10000);
-console.log("withdraw(10000) →", afterWithdraw2);
-task2Lines.push(`withdraw(10000) → ${JSON.stringify(afterWithdraw2)}`);
+let createBtn = document.querySelector("#create-btn");
+let elementCount = 0;
 
-task2Lines.push("");
-task2Lines.push(`Final balance: ${bankAccount.balance}`);
+createBtn.addEventListener("click", function() {
+  elementCount++;
+  
+  let container = document.querySelector("#element-container");
+  
+  // Create new element
+  let newDiv = document.createElement("div");
+  newDiv.className = "box";
+  newDiv.style.padding = "15px";
+  newDiv.style.background = "#FFE0B2";
+  newDiv.style.margin = "10px 0";
+  newDiv.style.borderRadius = "4px";
+  newDiv.style.border = "1px solid #FF9800";
+  newDiv.textContent = `New Element #${elementCount} - Created Dynamically!`;
 
-document.querySelector("#task2Output").textContent = task2Lines.join("\n");
+  // Add to page
+  if (container) {
+    container.appendChild(newDiv);
+  }
+  
+  createBtn.textContent = `Elements Created: ${elementCount}`;
+});
