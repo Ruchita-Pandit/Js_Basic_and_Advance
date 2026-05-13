@@ -3,9 +3,6 @@
 A personal record of my progress through a full JavaScript curriculum — from absolute basics to advanced browser concepts — built as interactive, browser-based practice pages I can open and run without any setup.
 
 
-## 🔗 Live Practice Site
-
-**→ [Click here to view](https://gokul211468.github.io/Basic-and-Advanced-Javascript/)**
 
 All lessons, in-class tasks, and homework are live here. Use the **Curriculum** panel on the right sidebar to jump between days and pages.
 
