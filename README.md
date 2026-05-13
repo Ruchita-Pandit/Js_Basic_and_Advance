@@ -5,7 +5,7 @@ A personal record of my progress through a full JavaScript curriculum — from a
 
 ## 🔗 Live Practice Site
 
-**→ [Click here to view](https://gokul211468.github.io/Basic-and-Advanced-Javascript/)**
+**→ [[Click here to view](https://ruchita-pandit.github.io/Js_Basic_and_Advance/)
 
 All lessons, in-class tasks, and homework are live here. Use the **Curriculum** panel on the right sidebar to jump between days and pages.
 
