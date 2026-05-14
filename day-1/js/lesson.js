@@ -3,7 +3,7 @@
 const topic1Snippet = `console.log("Hello, World!");`;
 
 const topic2Snippet = `console.log(2 + 3);
-console.log("Name: " + "Gokul");
+console.log("Name: " + "Ruchita");
 console.log(10 > 5);`;
 
 const topic3Snippet = `// This is a comment
