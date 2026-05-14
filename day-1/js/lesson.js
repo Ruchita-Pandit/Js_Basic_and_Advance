@@ -22,5 +22,5 @@ document.querySelector("#topic3Code code").textContent = topic3Snippet;
 console.log("=== Day 1: Basics ===");
 console.log("Hello, World!");
 console.log(2 + 3);
-console.log("Name: " + "Gokul");
+console.log("Name: " + "Ruchita");
 console.log(10 > 5);
