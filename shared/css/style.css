@@ -235,6 +235,25 @@ body {
     white-space: pre-wrap;
 }
 
+#topic1Output,
+#topic2Output,
+#topic3Output,
+#topic4Output,
+#topic5Output,
+#topic6Output  {
+    margin-top: 0.25rem;
+
+    background: var(--output-bg);
+
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-sm);
+
+    min-height: 3rem;
+
+    white-space: pre-wrap;
+}
+
+
 /* =========================
    Sidebar
 ========================= */

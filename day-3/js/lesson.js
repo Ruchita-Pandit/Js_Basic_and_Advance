@@ -40,3 +40,44 @@ console.log(true || false);
 console.log(!true);
 
 console.log(10 > 5 ? "yes" : "no");
+
+// Output Arrays
+// ==============================
+
+const topic1Output = [
+    "15",
+    "5",
+    "50",
+    "2",
+    "1",
+    "8"
+];
+
+const topic2Output = [
+    "true",
+    "false",
+    "true",
+    "true",
+    "true"
+];
+
+const topic3Output = [
+    "false",
+    "true",
+    "false",
+    "yes"
+];
+
+
+// ==============================
+// Show Output in HTML
+// ==============================
+
+document.getElementById("topic1Output").textContent =
+    topic1Output.join("\n");
+
+document.getElementById("topic2Output").textContent =
+    topic2Output.join("\n");
+
+document.getElementById("topic3Output").textContent =
+    topic3Output.join("\n");

@@ -1,88 +1,217 @@
-// Day 12 - Error Handling: Code Snippets
+// ==============================
+// Topic 1 : What is this
+// ==============================
 
-const topic1Snippet = `try {
-  let result = riskyFunction();
-  console.log(result);
-} catch (error) {
-  console.log("Error caught:", error.message);
-} finally {
-  console.log("Cleanup code always runs");
-}`;
-
-const topic2Snippet = `function validateAge(age) {
-  if (age < 0 || age > 150) {
-    throw new Error("Invalid age!");
-  }
-  return "Valid age";
+const topic1Code = `function whoAmI() {
+    console.log(this);
 }
 
-try {
-  console.log(validateAge(200));
-} catch (e) {
-  console.log("Caught error:", e.message);
-}`;
+whoAmI();
 
-const topic3Snippet = `try {
-  // ReferenceError
-  console.log(undefinedVariable);
-  
-  // TypeError
-  let obj = null;
-  obj.method();
-  
-  // SyntaxError (detected at parse time)
-  // eval("let x =");  
-} catch (error) {
-  if (error instanceof ReferenceError) {
-    console.log("Variable not defined");
-  } else if (error instanceof TypeError) {
-    console.log("Type error");
-  } else {
-    console.log("Unknown error");
-  }
-}`;
+const user1 = {
+    name: "Priya",
+    whoAmI
+};
 
-// Inject snippets into HTML
-document.querySelector("#topic1Code code").textContent = topic1Snippet;
-document.querySelector("#topic2Code code").textContent = topic2Snippet;
-document.querySelector("#topic3Code code").textContent = topic3Snippet;
+user1.whoAmI();
 
-// DEMO: try-catch Block
-let tryCatchBtn = document.querySelector("#try-catch-demo");
-let tryCatchOutput = document.querySelector("#try-catch-output");
+const other = {
+    name: "Aarav",
+    whoAmI
+};
 
-tryCatchBtn.addEventListener("click", function() {
-  try {
-    let result = Math.sqrt(-1);
-    console.log("Result:", result);
-    tryCatchOutput.innerHTML = "✓ No error: Result is " + result;
-  } catch (error) {
-    tryCatchOutput.innerHTML = "✗ Error caught: " + error.message;
-  } finally {
-    console.log("Cleanup code always runs");
-  }
-});
+other.whoAmI();`;
+
+document.getElementById("topic1Output").textContent = `
+undefined
+{ name: "Priya", whoAmI: f }
+{ name: "Aarav", whoAmI: f }
+`;
 
 
-// DEMO: Throwing Errors
-let ageInput = document.querySelector("#age-input");
-let validateAgeBtn = document.querySelector("#validate-age");
-let ageOutput = document.querySelector("#age-output");
+// ==============================
+// Topic 2 : The 4 Binding Rules
+// ==============================
 
-function validateAge(age) {
-  if (age < 0 || age > 150) {
-    throw new Error("Invalid age! Must be between 0 and 150");
-  }
-  return "Valid age";
+const topic2Code = `function speak() {
+    console.log(this);
 }
 
-validateAgeBtn.addEventListener("click", function() {
-  try {
-    let age = Number(ageInput.value);
-    console.log(validateAge(age));
-    ageOutput.innerHTML = "<span style='color: green;'>✓ " + validateAge(age) + "</span>";
-  } catch (e) {
-    console.log("Caught error:", e.message);
-    ageOutput.innerHTML = "<span style='color: red;'>✗ " + e.message + "</span>";
-  }
-});
+speak();
+
+const car = {
+    brand: "Tata",
+
+    show() {
+        console.log(this.brand);
+    }
+};
+
+car.show();
+
+function intro(city) {
+    console.log(\`\${this.name} from \${city}\`);
+}
+
+const u1 = { name: "Priya" };
+
+intro.call(u1, "Jaipur");
+
+function User(name) {
+    this.name = name;
+}
+
+const p = new User("Anaya");
+
+console.log(p.name);`;
+
+document.getElementById("topic2Output").textContent = `
+undefined
+Tata
+Priya from Jaipur
+Anaya
+`;
+
+
+// ==============================
+// Topic 3 : Call / Apply / Bind
+// ==============================
+
+const topic3Code = `function greet(city, lang) {
+    console.log(\`\${this.name} from \${city} speaks \${lang}\`);
+}
+
+const u2 = { name: "Priya" };
+
+greet.call(u2, "Jaipur", "Hindi");
+
+greet.apply(u2, ["Jaipur", "Hindi"]);
+
+const greetPriya = greet.bind(u2, "Jaipur");
+
+greetPriya("English");
+
+greetPriya("Marathi");
+
+greetPriya.call({ name: "Aarav" }, "Tamil");`;
+
+document.getElementById("topic3Output").textContent = `
+Priya from Jaipur speaks Hindi
+Priya from Jaipur speaks Hindi
+Priya from Jaipur speaks English
+Priya from Jaipur speaks Marathi
+Priya from Jaipur speaks Tamil
+`;
+
+
+// ==============================
+// Topic 4 : Arrow Function
+// ==============================
+
+const topic4Code = `const user2 = {
+    name: "Priya",
+
+    regular: function () {
+        console.log(this.name);
+    },
+
+    arrow: () => {
+        console.log(this.name);
+    }
+};
+
+user2.regular();
+
+user2.arrow();
+
+const team = {
+    members: ["Priya", "Aarav", "Riya"],
+
+    greetAll() {
+        this.members.forEach((m) => {
+            console.log(\`Hi \${m}, from team \${this.members.length}\`);
+        });
+    }
+};
+
+team.greetAll();`;
+
+document.getElementById("topic4Output").textContent = `
+Priya
+undefined
+Hi Priya, from team 3
+Hi Aarav, from team 3
+Hi Riya, from team 3
+`;
+
+
+// ==============================
+// Topic 5 : this in class
+// ==============================
+
+const topic5Code = `class UserClass {
+    constructor(name) {
+        this.name = name;
+    }
+
+    greet() {
+        console.log(\`Hi, I'm \${this.name}\`);
+    }
+}
+
+const a = new UserClass("Priya");
+
+const b = new UserClass("Aarav");
+
+a.greet();
+
+b.greet();
+
+const greetFn = a.greet;
+
+// greetFn();`;
+
+document.getElementById("topic5Output").textContent = `
+Hi, I'm Priya
+Hi, I'm Aarav
+TypeError if greetFn() is called
+`;
+
+
+// ==============================
+// Topic 6 : Lost this Bug
+// ==============================
+
+const topic6Code = `class Counter {
+    constructor() {
+        this.count = 0;
+    }
+
+    inc() {
+        this.count++;
+        console.log(this.count);
+    }
+}
+
+const c = new Counter();
+
+// setTimeout(c.inc, 100);
+
+setTimeout(c.inc.bind(c), 100);
+
+setTimeout(() => c.inc(), 200);
+
+class CounterArrow {
+    count = 0;
+
+    inc = () => {
+        this.count++;
+        console.log(this.count);
+    };
+}
+
+const ca = new CounterArrow();
+
+setTimeout(ca.inc, 300);`;
+
+document.getElementById("topic6Output").textContent = `121`;

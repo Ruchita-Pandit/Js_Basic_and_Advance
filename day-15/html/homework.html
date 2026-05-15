@@ -17,14 +17,14 @@
                 <h2>Homework Exercises</h2>
                 
                 <section>
-                    <h3>Exercise 1: Safe Array Access</h3>
-                    <div style="padding: 15px; background: #FFF3E0; border-radius: 4px; margin-bottom: 15px;">
-                        <p style="font-size: 12px; color: #555; margin-bottom: 10px;">Array: [10, 20, 30]</p>
-                        <input id="array-index" type="number" placeholder="Index (0-2)" style="padding: 8px; margin-bottom: 10px; width: 100%; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
-                        <button id="access-array" style="padding: 10px 20px; cursor: pointer; width: 100%; background: #FF9800; color: white; border: none; border-radius: 4px;">Access Element</button>
-                    </div>
-                    <p id="array-output" style="color: #666; font-size: 12px;"></p>
-                    <pre><code>function getArrayElement(arr, index) {
+                    <h3>Exercise 1: Predict the `this`</h3>
+                    <p><li>Type the following snippet exactly: a user object with name: "Priya" and a method greet()
+{ console.log(this.name); } . Then call user.greet() . Then assign const g =
+user.greet and call g() .</li>
+<li>Predict the output of each call BEFORE running.</li>
+<li>Run. Note actual output.</li>
+<li>In a comment, explain why the second call lost the this </li></p>
+      <pre><code>function getArrayElement(arr, index) {
   try {
     if (!Array.isArray(arr)) {
       throw new Error("First argument must be an array");
