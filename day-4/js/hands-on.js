@@ -1,166 +1,201 @@
-// task1
-function printGrade(marks){
+// ======================
+// Task 1
+// ======================
 
-if (marks < 0 || marks > 100) {
-  console.log("Invalid marks");
-} 
-else if (marks >= 90) {
-  console.log("Grade is A");
-} 
-else if (marks >= 75) {
-  console.log("Grade is B");
-} 
-else if (marks >= 60) {
-  console.log("Grade is C");
-} 
-else {
-  console.log("Grade is F");
+function printGrade(marks) {
+
+    if (marks < 0 || marks > 100) {
+        return "Invalid marks";
+    }
+    else if (marks >= 90) {
+        return "Grade is A";
+    }
+    else if (marks >= 75) {
+        return "Grade is B";
+    }
+    else if (marks >= 60) {
+        return "Grade is C";
+    }
+    else {
+        return "Grade is F";
+    }
 }
 
-}
+document.getElementById("task1Output").textContent =
+`${printGrade(75)}
+${printGrade(95)}
+${printGrade(50)}`;
 
-printGrade(75);
-printGrade(95);
-printGrade(50);
 
-//task2
-day = "Wednesday";
+// ======================
+// Task 2
+// ======================
+
+let day = "Wednesday";
+let result = "";
 
 switch (day) {
-  case "Monday":
-  case "Tuesday":
-  case "Wednesday":
-  case "Thursday":
-  case "Friday":
-    console.log("Weekday");
-    break;
 
-  case "Saturday":
-  case "Sunday":
-    console.log("Weekend");
-    break;
+    case "Monday":
+    case "Tuesday":
+    case "Wednesday":
+    case "Thursday":
+    case "Friday":
+        result = "Weekday";
+        break;
 
-  default:
-    console.log("Invalid day");
+    case "Saturday":
+    case "Sunday":
+        result = "Weekend";
+        break;
+
+    default:
+        result = "Invalid day";
 }
 
-//task3
+document.getElementById("task2Output").textContent = result;
 
 
-if (0){
-    console.log("0 is a truthy value");
-}  
-else{
-    console.log("0 is a falsy value");
-} 
+// ======================
+// Task 3
+// ======================
 
+let truthyFalsyOutput = "";
+
+if (0) {
+    truthyFalsyOutput += "0 is a truthy value\n";
+}
+else {
+    truthyFalsyOutput += "0 is a falsy value\n";
+}
 
 if ("0") {
-  console.log('"0" is a truthy value');
-} else {
-  console.log('"0" is a falsy value');
+    truthyFalsyOutput += '"0" is a truthy value\n';
+}
+else {
+    truthyFalsyOutput += '"0" is a falsy value\n';
 }
 
 if ("") {
-  console.log("empty string is a truthy value");
-} else {
-  console.log("empty string is a falsy value");
+    truthyFalsyOutput += 'empty string is a truthy value\n';
+}
+else {
+    truthyFalsyOutput += 'empty string is a falsy value\n';
 }
 
 if (" ") {
-  console.log("string which has space inside it is truthy");
-} else {
-  console.log("string which has space inside it is falsy");
+    truthyFalsyOutput += 'string with space is truthy\n';
+}
+else {
+    truthyFalsyOutput += 'string with space is falsy\n';
 }
 
 if (null) {
-  console.log("null is a truthy value");
-} else {
-  console.log("null is a falsy value");
+    truthyFalsyOutput += 'null is truthy\n';
+}
+else {
+    truthyFalsyOutput += 'null is falsy\n';
 }
 
 if (undefined) {
-  console.log("undefined is a truthy value");
-} else {
-  console.log("undefined is a falsy value");
+    truthyFalsyOutput += 'undefined is truthy\n';
+}
+else {
+    truthyFalsyOutput += 'undefined is falsy\n';
 }
 
 if (NaN) {
-  console.log("NaN is a truthy value");
-} else {
-  console.log("NaN is a falsy value");
+    truthyFalsyOutput += 'NaN is truthy\n';
+}
+else {
+    truthyFalsyOutput += 'NaN is falsy\n';
 }
 
 if ([]) {
-  console.log("[] is a truthy value");
-} else {
-  console.log("[] is a falsy value");
+    truthyFalsyOutput += '[] is truthy\n';
+}
+else {
+    truthyFalsyOutput += '[] is falsy\n';
 }
 
 if ({}) {
-  console.log("{} is a truthy value");
-} else {
-  console.log("{} is a falsy value");
+    truthyFalsyOutput += '{} is truthy\n';
+}
+else {
+    truthyFalsyOutput += '{} is falsy\n';
 }
 
 if ("false") {
-  console.log("string false is truthy value");
-} else {
-  console.log("string false is falsy value");
+    truthyFalsyOutput += '"false" string is truthy\n';
+}
+else {
+    truthyFalsyOutput += '"false" string is falsy\n';
 }
 
-// falsy values: false, 0, "", null, undefined, NaN
+truthyFalsyOutput += `
+Falsy values: false, 0, "", null, undefined, NaN`;
 
-//bonus task
+document.getElementById("task3Output").textContent = truthyFalsyOutput;
+
+
+// ======================
+// Bonus Task
+// ======================
 
 const user1 = {
-    isBanned : true,
-    age : 12
-}
+    isBanned: true,
+    age: 12
+};
 
 const user2 = {
-    isBanned : null,
-    age : 18
-}
+    isBanned: null,
+    age: 18
+};
 
-function canComment(user) {
-  if (user) {
-    if (!user.isBanned) {
-      if (user.age >= 13) {
-        console.log("Comment allowed");
-      }
-    }
-  }
-}
+function comment(user) {
 
-function comment(user){
-    if(!user) return "comment not allowed";
-    if(user.isBanned) return "comment not allowed";
-    if(user.age >= 13) return "comment allowed"
-}
+    if (!user) return "Comment not allowed";
 
-console.log(comment(user1));
-console.log(comment(user2));
+    if (user.isBanned) return "Comment not allowed";
+
+    if (user.age >= 13) return "Comment allowed";
+}
 
 const fruits = ["apple", "banana", "mango"];
 
-for(let i = 0; i < fruits.length; i++){
-console.log(fruits[i]);
-} 
+let bonusOutput = "";
+
+bonusOutput += `${comment(user1)}\n`;
+bonusOutput += `${comment(user2)}\n\n`;
+
+bonusOutput += "Fruits:\n";
+
+for (let i = 0; i < fruits.length; i++) {
+    bonusOutput += fruits[i] + "\n";
+}
 
 const Username = "Priya";
-for(let i = 0; i < Username.length; i++){
-console.log(Username[i]);
-} 
 
-const s = { name: "Aarav", age: 22 };
-// for (const k in s) console.log(k);
+bonusOutput += "\nCharacters in Username:\n";
 
-// for (const k in s) console.log(k, s[k]);
+for (let i = 0; i < Username.length; i++) {
+    bonusOutput += Username[i] + "\n";
+}
+
+const s = {
+    name: "Aarav",
+    age: 22
+};
 
 const keys = Object.keys(s);
 
+bonusOutput += "\nObject Keys and Values:\n";
+
 for (let i = 0; i < keys.length; i++) {
+
     const key = keys[i];
-    console.log(key, s[key]);
+
+    bonusOutput += `${key} : ${s[key]}\n`;
 }
+
+document.getElementById("taskBonusOutput").textContent = bonusOutput;

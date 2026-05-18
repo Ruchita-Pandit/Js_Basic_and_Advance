@@ -1,4 +1,7 @@
-// Task 1 
+// ======================
+// Task 1
+// ======================
+
 const a = 17;
 const b = 5;
 
@@ -11,24 +14,33 @@ const sixthResult = a ** b;
 
 const evenOrOdd = (42 % 2 === 0 ? "even" : "odd");
 
-console.log(firstResult);
-console.log(secondResult);
-console.log(thirdResult);
-console.log(fourthResult);
-console.log(fifthResult);
-console.log(sixthResult);
-console.log(evenOrOdd);
+document.getElementById("task1Output").textContent =
+`Addition: ${firstResult}
+Subtraction: ${secondResult}
+Multiplication: ${thirdResult}
+Division: ${fourthResult}
+Remainder: ${fifthResult}
+`
 
+
+// ======================
 // Task 2
+// ======================
 
-console.log(5 == "5"); // true
-console.log(5 === "5"); // false
-console.log(0 == false); // true
-console.log(0 === false); // false
-console.log(null == undefined); // true
-// === is preferred because it checks both value and type 
+document.getElementById("task2Output").textContent =
+`5 == "5" -> ${5 == "5"}
+5 === "5" -> ${5 === "5"}
+0 == false -> ${0 == false}
+0 === false -> ${0 === false}
+null == undefined -> ${null == undefined}
 
+// === is preferred because it checks both value and type`;
+
+
+// ======================
 // Task 3
+// ======================
+
 const age = 19;
 let hasLicense = true;
 const hasCar = false;
@@ -36,27 +48,35 @@ const hasCar = false;
 const canDrive = age >= 18 && hasLicense;
 const canTravel = hasLicense || hasCar;
 
-console.log("canDrive: ", canDrive);
-console.log("canTravel: ", canTravel);
-
 hasLicense = false;
 
 const canDriveAfterFlip = age >= 18 && hasLicense;
 const canTravelAfterFlip = hasLicense || hasCar;
 
-console.log("canDriveAfterFlip: ",canDriveAfterFlip);
-console.log("canTravelAfterFlip: ",canTravelAfterFlip);
+document.getElementById("task3Output").textContent =
+`canDrive: ${canDrive}
+canTravel: ${canTravel}
 
-//bonus Task
+After changing hasLicense to false:
+
+canDriveAfterFlip: ${canDriveAfterFlip}
+canTravelAfterFlip: ${canTravelAfterFlip}`;
+
+
+// ======================
+// Bonus Task
+// ======================
 
 const mood = age >= 18 ? "adult" : "minor";
-console.log(mood);
 
 let username = null;
 const display = username ?? "Guest";
-console.log(display);
-
 const display2 = username || "Guest";
-console.log(display2);
 
-// ?? only falls back for null or undefined, while || falls back for any falsy value 
+document.getElementById("taskBonusOutput").textContent =`Mood: ${mood}
+
+Using ?? operator: ${display}
+Using || operator: ${display2}`
+
+// ?? only falls back for null or undefined,
+// while || falls back for any falsy value`;

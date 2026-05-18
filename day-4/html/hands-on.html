@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 4 â€” Control Flow | JavaScript Curriculum</title>
+    <title>Day 4 - Control Flow | JavaScript Curriculum</title>
     <link rel="stylesheet" href="../../shared/css/style.css">
 </head>
 <body>
     <div class="page-shell">
         <header class="site-header">
-            <h1>Day 4: Control Flow</h1>
+            <h1>Day 4 : Control Flow</h1>
             <p class="subtitle">Hands-on: In-class Tasks</p>
         </header>
 
@@ -27,6 +27,8 @@ if (num > 0) {
 } else {
   console.log("Zero");
 }</code></pre>
+<h4>Output</h4>
+    <pre id="task1Output"></pre>
                 </section>
 
                 <section>
@@ -37,6 +39,8 @@ if (age >= 18) {
 } else {
   console.log("Not eligible to vote");
 }</code></pre>
+<h4>Output</h4>
+    <pre id="task2Output"></pre>
                 </section>
 
                 <section>
@@ -51,6 +55,64 @@ if (marks >= 80) {
 } else {
   console.log("Grade: F");
 }</code></pre>
+<h4>Output</h4>
+    <pre id="task3Output"></pre>
+    <section>
+                    <h3>Task 4: Bonous Task</h3>
+                    <pre><code>const user1 = {
+    isBanned : true,
+    age : 12
+}
+
+const user2 = {
+    isBanned : null,
+    age : 18
+}
+
+function canComment(user) {
+  if (user) {
+    if (!user.isBanned) {
+      if (user.age >= 13) {
+        console.log("Comment allowed");
+      }
+    }
+  }
+}
+
+function comment(user){
+    if(!user) return "comment not allowed";
+    if(user.isBanned) return "comment not allowed";
+    if(user.age >= 13) return "comment allowed"
+}
+
+console.log(comment(user1));
+console.log(comment(user2));
+
+const fruits = ["apple", "banana", "mango"];
+
+for(let i = 0; i < fruits.length; i++){
+console.log(fruits[i]);
+} 
+
+const Username = "Priya";
+for(let i = 0; i < Username.length; i++){
+console.log(Username[i]);
+} 
+
+const s = { name: "Aarav", age: 22 };
+// for (const k in s) console.log(k);
+
+// for (const k in s) console.log(k, s[k]);
+
+const keys = Object.keys(s);
+
+for (let i = 0; i < keys.length; i++) {
+    const key = keys[i];
+    console.log(key, s[key]);
+}</code></pre>
+<h4>Output</h4>
+    <pre id="taskBonusOutput"></pre>
+                </section>
                 </section>
 
             </article>
