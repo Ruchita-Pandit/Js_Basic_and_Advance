@@ -3,175 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 15 The this Keyword</title>
+    <title>Day 13 - Hoisting and TDZ | JavaScript Curriculum</title>
     <link rel="stylesheet" href="../../shared/css/style.css">
 </head>
+
 <body>
     <div class="page-shell">
         <header class="site-header">
-            <h1>DAY 15 The this Keyword</h1>
+            <h1>Day 13: Hoisting and TDZ</h1>
             <p class="subtitle">Lesson: Topics and Demo Code</p>
         </header>
+
         <main class="site-content">
             <article>
-                <h2>Error Handling in JavaScript</h2>
-                <p>Handle errors gracefully with try-catch-finally blocks.</p>
+                <h2>Hoisting & Temporal Dead Zone</h2>
+                <p>Understanding how JavaScript hoists declarations and the Temporal Dead Zone concept.</p>
                 
                 <section>
-                    <h3>What is `this`</h3>
-                        <pre><code>function whoAmI() {
-console.log(this);
-}
-whoAmI(); // strict mode: undefined; non-strict: window/global
-
-const user = { name: "Priya", whoAmI };
-user.whoAmI(); // logs the user object — called as a method
-
-const other = { name: "Aarav", whoAmI };
-other.whoAmI();</code></pre>
-
-                    <h4>Output</h4>
-        <pre id="topic1Output"></pre>
+                    <h3>Hoisting with var</h3>
+                    <div id="topic1Code">
+                        <pre><code></code></pre>
+                    </div>
                 </section>
 
                 <section>
-                    <h3>The 4 Binding Rules</h3>
-                        <pre><code>// 1. Default — plain function call
-function speak() { console.log(this); }
-speak(); // undefined (strict mode)
-
-// 2. Implicit — method call
-const car = {
-brand: "Tata",
-show() { console.log(this.brand); },
-};
-car.show(); // "Tata" ← this = car
-
-// 3. Explicit — call/apply/bind
-function intro(city) { console.log(`${this.name} from ${city}`); }
-const u = { name: "Priya" };
-intro.call(u, "Jaipur"); // "Priya from Jaipur" ← this = u
-
-// 4. new — constructor binding
-function User(name) { this.name = name; }
-const p = new User("Anaya");
-console.log(p.name); // "Anaya" ← this = the new object</code></pre>
-<h4>Output</h4>
-        <pre id="topic2Output"></pre>
+                    <h3>Hoisting with let and const</h3>
+                    <div id="topic2Code">
+                        <pre><code></code></pre>
+                    </div>
                 </section>
 
                 <section>
-                    <h3>call / apply / bind</h3>
-                        <pre><code>function greet(city, lang) {
-console.log(`${this.name} from ${city} speaks ${lang}`);
-}
-
-const u = { name: "Priya" };
-// call — invoke now, args listed
-greet.call(u, "Jaipur", "Hindi"); // "Priya from Jaipur speaks Hindi"
-
-// apply — invoke now, args as array
-greet.apply(u, ["Jaipur", "Hindi"]); // same output
-
-// bind — returns a new function for later
-const greetPriya = greet.bind(u, "Jaipur"); // partially applied: city pre-set
-greetPriya("English"); // "Priya from Jaipur speaks
-English"
-greetPriya("Marathi"); // "Priya from Jaipur speaks
-Marathi"
-
-// Once bound, this CANNOT be re-bound
-greetPriya.call({ name: "Aarav" }, "Tamil"); // still "Priya from Jaipur speaks Tamil "</code></pre>
-<h4>Output</h4>
-        <pre id="topic3Output"></pre>
+                    <h3>Function Hoisting</h3>
+                    <div id="topic3Code">
+                        <pre><code></code></pre>
+                    </div>
                 </section>
 
-            <section>
-                    <h3> Arrow Functions — Lexical thi</h3>
-                        <pre><code>const user = {
-name: "Priya",
-Explicit binding
-// Regular function — has its own this
-regular: function () {
-console.log(this.name); // "Priya" ← implicit binding
-},
-// Arrow — no own this; inherits from enclosing scope (here: module/global)
-arrow: () => {
-console.log(this.name); // undefined ← arrow doesn't see user as this
-},
-};
-user.regular(); // "Priya"
-user.arrow(); // undefined ← surprise! arrow as a method is usually wrong
-
-// Where arrow shines: nested callbacks
-const team = {
-members: ["Priya", "Aarav", "Riya"],
-greetAll() {
-this.members.forEach((m) => {
-// Arrow here inherits 'this' from greetAll → which is 'team'
-console.log(`Hi ${m}, from team ${this.members.length}`);
-});
-},
-};
-team.greetAll();
-// "Hi Priya, from team 3"
-// "Hi Aarav, from team 3"
-// "Hi Riya, from team 3"</code></pre>
-<h4>Output</h4>
-        <pre id="topic4Output"></pre>
-                </section>
-
-             <section>
-                    <h3>`this` in Classes</h3>
-                        <pre><code>class User {
-constructor(name) {
-this.name = name; // this = the new instance
-}
-greet() {
-console.log(`Hi, I'm ${this.name}`); // this = whichever instance .greet() was
-called on
-}
-}
-const a = new User("Priya");
-const b = new User("Aarav");
-a.greet(); // "Hi, I'm Priya"
-b.greet(); // "Hi, I'm Aarav"
-// Classic loss-of-this:
-const greetFn = a.greet; // pulled off as a plain function
-// greetFn(); // TypeError: cannot read 'name' of undefined
-// (this is now undefined in strict mode)
-</code></pre>
-<h4>Output</h4>
-        <pre id="topic5Output"></pre>
-                </section>
-
-             <section>
-                    <h3> The "Lost this" Bug & Fixes</h3>
-                        <pre><code>class Counter {
-constructor() { this.count = 0; }
-inc() { this.count++; console.log(this.count); }
-}
-const c = new Counter();
-// BUG — passed as plain function reference, this is lost
-setTimeout(c.inc, 100); // TypeError: cannot read 'count' of
-undefined
-// FIX 1 — bind
-setTimeout(c.inc.bind(c), 100); // works — this permanently bound to c
-// FIX 2 — arrow wrapper (closes over c lexically)
-setTimeout(() => c.inc(), 100); // works — c.inc() called as a method
-// FIX 3 — class field as arrow (modern syntax)
-class CounterArrow {
-count = 0;
-inc = () => { this.count++; console.log(this.count); }; // arrow → lexical this
-}
-const ca = new CounterArrow();
-setTimeout(ca.inc, 100); // works — arrow's this is the instance
-</code></pre>
-<h4>Output</h4>
-        <pre id="topic6Output"></pre>
             </article>
         </main>
-</div>
 
                 <aside class="site-outline">
             <h2>Curriculum</h2>
@@ -278,21 +148,21 @@ setTimeout(ca.inc, 100); // works — arrow's this is the instance
                         </ul>
                     </details>
                     
-                    <details open>
+                    <details >
                         <summary>Day 12 — Error Handling</summary>
+                        <ul>
+                            <li><a href="../../day-12/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-12/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-12/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+                    
+                    <details open>
+                        <summary>Day 13 — Hoisting and TDZ</summary>
                         <ul>
                             <li><a href="lesson.html" aria-current="page">Lesson</a></li>
                             <li><a href="hands-on.html">Hands-on</a></li>
                             <li><a href="homework.html">Homework</a></li>
-                        </ul>
-                    </details>
-                    
-                    <details >
-                        <summary>Day 13 — Hoisting and TDZ</summary>
-                        <ul>
-                            <li><a href="../../day-13/html/lesson.html">Lesson</a></li>
-                            <li><a href="../../day-13/html/hands-on.html">Hands-on</a></li>
-                            <li><a href="../../day-13/html/homework.html">Homework</a></li>
                         </ul>
                     </details>
 
@@ -305,14 +175,14 @@ setTimeout(ca.inc, 100); // works — arrow's this is the instance
                         </ul>
                     </details>
 
-                    <details >
+                    <details open>
                         <summary>Day 15 — The this Keyword </summary>
                         <ul>
                             <li><a href="../../day-15/html/lesson.html">Lesson</a></li>
                             <li><a href="../../day-15/html/hands-on.html">Hands-on</a></li>
                             <li><a href="../../day-15/html/homework.html">Homework</a></li>
                         </ul>
-                    </details>
+                    </details>                    
                 </ul>
             </nav>
         </aside>
@@ -320,7 +190,3 @@ setTimeout(ca.inc, 100); // works — arrow's this is the instance
     <script src="../js/lesson.js"></script>
 </body>
 </html>
-
-
-
-

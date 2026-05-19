@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 15 The this Keyword</title>
+    <title>Day 15 - The this keyword</title>
     <link rel="stylesheet" href="../../shared/css/style.css">
 </head>
 <body>
     <div class="page-shell">
         <header class="site-header">
-            <h1>DAY 15 The this Keyword</h1>
+            <h1>DAY 15 : The this keyword</h1>
             <p class="subtitle">Hands-on: In-class Tasks</p>
         </header>
         <main class="site-content">
@@ -17,22 +17,59 @@
                 <h2>Hands-on Tasks</h2>
                 
                 <section>
-                    <h3>Task 1: Predict the `this`</h3>
-                    <pre><code></code></pre>
+                    <h3>Task 1 : Predict the this</h3>
+                    <ol>
+                        <li>Predict the output before running.</li>
+                        <li>Run the code and compare the result.</li>
+                        <li>Explain why the second call lost <code>this</code>.</li>
+                    </ol>
+                    <pre><code id="task1Code"></code></pre>
+                    <h4>Output</h4>
+                    <pre id="task1Output"></pre>
                 </section>
 
                 <section>
-                    <h3>Task 2: Validate Input</h3>
-                    <p></p>
-                    <pre><code></code></pre>
+                    <h3>Task 2 : Fix it Three Ways</h3>
+                    <ol>
+                        <li>Create the Timer class.</li>
+                        <li>Run setInterval(t.tick, 1000).</li>
+                        <li>Observe the TypeError.</li>
+                        <li>Fix using bind.</li>
+                        <li>Fix using arrow wrapper.</li>
+                        <li>Fix using class field arrow function.</li>
+                    </ol>
+                    <pre><code id="task2Code"></code></pre>
+                    <h4>Output</h4>
+                    <pre id="task2Output"></pre>
                 </section>
 
                 <section>
-                    <h3>Task 3: Parse JSON Safely</h3>
-                    <p></p>
-                    <pre><code></code></pre>
+                    <h3>Task 3 : call / apply / bind</h3>
+                    <ol>
+                        <li>Create describe(role, city).</li>
+                        <li>Create user object.</li>
+                        <li>Use call().</li>
+                        <li>Use apply().</li>
+                        <li>Create bound function using bind().</li>
+                    </ol>
+                    <pre><code id="task3Code"></code></pre>
+                    <h4>Output</h4>
+                    <pre id="task3Output"></pre>
                 </section>
 
+                <section>
+                    <h3>Bonus Task : Arrow vs Regular Method</h3>
+                    <ol>
+                        <li>Create team object.</li>
+                        <li>Create printRegular().</li>
+                        <li>Create printArrow().</li>
+                        <li>Observe which one breaks.</li>
+                        <li>Explain why arrow function works.</li>
+                    </ol>
+                    <pre><code id="taskBonusCode"></code></pre>
+                    <h4>Output</h4>
+                    <pre id="taskBonusOutput"></pre>
+                </section>
             </article>
         </main>
 
@@ -132,21 +169,21 @@
                         </ul>
                     </details>
                     
-                    <details >
-                        <summary>Day 11 — Events</summary>
-                        <ul>
-                            <li><a href="../../day-11/html/lesson.html">Lesson</a></li>
-                            <li><a href="../../day-11/html/hands-on.html">Hands-on</a></li>
-                            <li><a href="../../day-11/html/homework.html">Homework</a></li>
-                        </ul>
-                    </details>
-                    
                     <details open>
-                        <summary>Day 12 — Error Handling</summary>
+                        <summary>Day 11 — Events</summary>
                         <ul>
                             <li><a href="lesson.html">Lesson</a></li>
                             <li><a href="hands-on.html" aria-current="page">Hands-on</a></li>
                             <li><a href="homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+                    
+                    <details >
+                        <summary>Day 12 — Error Handling</summary>
+                        <ul>
+                            <li><a href="../../day-12/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-12/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-12/html/homework.html">Homework</a></li>
                         </ul>
                     </details>
                     
@@ -176,7 +213,7 @@
                             <li><a href="../../day-15/html/homework.html">Homework</a></li>
                         </ul>
                     </details>
-
+                    
                 </ul>
             </nav>
         </aside>

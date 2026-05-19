@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 14 Scope & Closures</title>
+    <title>Day 14 - Scope and Closure</title>
     <link rel="stylesheet" href="../../shared/css/style.css">
 </head>
 <body>
     <div class="page-shell">
         <header class="site-header">
-            <h1>DAY 14 Scope & Clouser</h1>
+            <h1>DAY 13 : Scope and Closure</h1>
             <p class="subtitle">Hands-on: In-class Tasks</p>
         </header>
         <main class="site-content">
@@ -17,58 +17,63 @@
                 <h2>Hands-on Tasks</h2>
                 
                 <section>
-                    <h3>Task 1: Basic try-catch</h3>
-                    <div style="padding: 15px; background: #F3E5F5; border-radius: 4px; margin-bottom: 15px;">
-                        <input id="divide-a" type="number" placeholder="Dividend" style="padding: 8px; margin-bottom: 10px; width: 100%; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
-                        <input id="divide-b" type="number" placeholder="Divisor" style="padding: 8px; margin-bottom: 10px; width: 100%; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
-                        <button id="divide-btn" style="padding: 10px 20px; cursor: pointer; width: 100%; background: #9C27B0; color: white; border: none; border-radius: 4px;">Divide</button>
-                    </div>
-                    <p id="divide-output" style="color: #666; font-size: 12px;"></p>
-                    <pre><code>function divide(a, b) {
-  if (b === 0) {
-    throw new Error("Cannot divide by zero");
-  }
-  return a / b;
-}</code></pre>
+                    <h3>Task 1 : Build a Counter</h3>
+
+                    <ol>
+                        <li>Write a function <code>makeCounter()</code> that returns a function.</li>
+                        <li>The returned function should return the next integer starting from 1.</li>
+                        <li>Create TWO independent counters.</li>
+                        <li>Verify they do not interfere with each other.</li>
+                        <li>Explain where the <code>count</code> variable lives between calls.</li>
+                    </ol>
+                    <pre><code id="task1Code"></code></pre>
+                    <h4>Output</h4>
+                    <pre id="task1Output"></pre>
                 </section>
 
                 <section>
-                    <h3>Task 2: Validate Input</h3>
-                    <div style="padding: 15px; background: #E8F5E9; border-radius: 4px; margin-bottom: 15px;">
-                        <input id="user-name" type="text" placeholder="Name" style="padding: 8px; margin-bottom: 10px; width: 100%; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
-                        <input id="user-email" type="email" placeholder="Email" style="padding: 8px; margin-bottom: 10px; width: 100%; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
-                        <button id="validate-user" style="padding: 10px 20px; cursor: pointer; width: 100%; background: #4CAF50; color: white; border: none; border-radius: 4px;">Validate User</button>
-                    </div>
-                    <p id="user-output" style="color: #666; font-size: 12px;"></p>
-                    <pre><code>function processUser(data) {
-  try {
-    if (!data) throw new Error("Data is required");
-    if (!data.name) throw new Error("Name is required");
-    if (!data.email) throw new Error("Email is required");
-    console.log("User valid:", data.name);
-  } catch (error) {
-    console.log("Validation error:", error.message);
-  }
-}</code></pre>
+                    <h3>Task 2 : Fix the var-in-Loop Bug</h3>
+
+                    <ol>
+                        <li>Predict the output before running.</li>
+                        <li>Run the code and note the actual output.</li>
+                        <li>Fix it by changing ONE keyword.</li>
+                        <li>Verify it logs 1, 2, 3.</li>
+                        <li>Explain why <code>var</code> caused the issue and why <code>let</code> fixes it.</li>
+                    </ol>
+                    <pre><code id="task2Code"></code></pre>
+                    <h4>Output</h4>
+                    <pre id="task2Output"></pre>
+                </section>
+
+
+                <section>
+                    <h3>Task 3 : Private Bank Balance</h3>
+                    <ol>
+                        <li>Write a function <code>createAccount(initial)</code>.</li>
+                        <li>Return methods: <code>deposit()</code>, <code>withdraw()</code>, and <code>getBalance()</code>.</li>
+                        <li>Keep <code>balance</code> private.</li>
+                        <li>Test deposit and withdraw operations.</li>
+                        <li>Verify <code>account.balance</code> is undefined.</li>
+                    </ol>
+                    <pre><code id="task3Code"></code></pre>
+                    <h4>Output</h4>
+                    <pre id="task3Output"></pre>
                 </section>
 
                 <section>
-                    <h3>Task 3: Parse JSON Safely</h3>
-                    <div style="padding: 15px; background: #E1F5FE; border-radius: 4px; margin-bottom: 15px;">
-                        <textarea id="json-input" placeholder='Enter JSON like {"name": "Gokul", "age": 20}' style="padding: 8px; width: 100%; height: 80px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; font-family: monospace;"></textarea>
-                        <button id="parse-json" style="padding: 10px 20px; cursor: pointer; width: 100%; margin-top: 10px; background: #2196F3; color: white; border: none; border-radius: 4px;">Parse JSON</button>
-                    </div>
-                    <p id="json-output" style="color: #666; font-size: 12px;"></p>
-                    <pre><code>let jsonString = '{"name": "Gokul", "age": 20}';
-
-try {
-  let data = JSON.parse(jsonString);
-  console.log(data);
-} catch (error) {
-  console.log("Invalid JSON:", error.message);
-}</code></pre>
+                    <h3>Bonus Task : Build a Memoizer</h3>
+                    <ol>
+                        <li>Write a function <code>memoize(fn)</code>.</li>
+                        <li>Cache results using closures.</li>
+                        <li>Create <code>expensiveSquare(n)</code>.</li>
+                        <li>Call the memoized function with 5 twice, then another value.</li>
+                        <li>Explain where the cache lives.</li>
+                    </ol>
+                    <pre><code id="taskBonusCode"></code></pre>
+                    <h4>Output</h4>
+                    <pre id="taskBonusOutput"></pre>
                 </section>
-
             </article>
         </main>
 
@@ -168,21 +173,21 @@ try {
                         </ul>
                     </details>
                     
-                    <details >
-                        <summary>Day 11 — Events</summary>
-                        <ul>
-                            <li><a href="../../day-11/html/lesson.html">Lesson</a></li>
-                            <li><a href="../../day-11/html/hands-on.html">Hands-on</a></li>
-                            <li><a href="../../day-11/html/homework.html">Homework</a></li>
-                        </ul>
-                    </details>
-                    
                     <details open>
-                        <summary>Day 12 — Error Handling</summary>
+                        <summary>Day 11 — Events</summary>
                         <ul>
                             <li><a href="lesson.html">Lesson</a></li>
                             <li><a href="hands-on.html" aria-current="page">Hands-on</a></li>
                             <li><a href="homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+                    
+                    <details >
+                        <summary>Day 12 — Error Handling</summary>
+                        <ul>
+                            <li><a href="../../day-12/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-12/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-12/html/homework.html">Homework</a></li>
                         </ul>
                     </details>
                     
@@ -195,7 +200,7 @@ try {
                         </ul>
                     </details>
 
-                    <details >
+                      <details >
                         <summary>Day 14 — Scope & Clouser </summary>
                         <ul>
                             <li><a href="../../day-14/html/lesson.html">Lesson</a></li>
@@ -212,6 +217,7 @@ try {
                             <li><a href="../../day-15/html/homework.html">Homework</a></li>
                         </ul>
                     </details>
+                    
                 </ul>
             </nav>
         </aside>

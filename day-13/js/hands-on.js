@@ -1,77 +1,176 @@
-// Task 1: Basic try-catch
-let divideAInput = document.querySelector("#divide-a");
-let divideBInput = document.querySelector("#divide-b");
-let divideBtn = document.querySelector("#divide-btn");
-let divideOutput = document.querySelector("#divide-output");
+// ==============================
+// Task 1 : var Hoisting
+// ==============================
 
-function divide(a, b) {
-  if (b === 0) {
-    throw new Error("Cannot divide by zero");
-  }
-  return a / b;
+const task1Code = `// Prediction:
+// First console.log -> undefined
+// Second console.log -> Priya
+
+console.log(name);
+
+var name = "Priya";
+
+console.log(name);
+
+// Why undefined and not ReferenceError?
+// var declarations are hoisted and initialized with undefined
+// during memory creation phase.`;
+
+
+document.getElementById("task1Code").textContent = task1Code;
+
+let task1Result = "";
+
+function task1Log(message) {
+    task1Result += message + "\n";
 }
 
-divideBtn.addEventListener("click", function() {
-  try {
-    let a = Number(divideAInput.value);
-    let b = Number(divideBInput.value);
-    let result = divide(a, b);
-    divideOutput.innerHTML = `<span style='color: green;'>✓ Result: ${a} ÷ ${b} = ${result}</span>`;
-    console.log("Result:", result);
-  } catch (e) {
-    divideOutput.innerHTML = `<span style='color: red;'>✗ Error: ${e.message}</span>`;
-    console.log("Error:", e.message);
-  }
-});
+var name;
+
+task1Log(name);
+
+name = "Priya";
+
+task1Log(name);
+
+document.getElementById("task1Output").textContent = task1Result;
 
 
-// Task 2: Validate Input
-let userNameInput = document.querySelector("#user-name");
-let userEmailInput = document.querySelector("#user-email");
-let validateUserBtn = document.querySelector("#validate-user");
-let userOutput = document.querySelector("#user-output");
+// ==============================
+// Task 2 : TDZ
+// ==============================
 
-function processUser(data) {
-  try {
-    if (!data) throw new Error("Data is required");
-    if (!data.name) throw new Error("Name is required");
-    if (!data.email) throw new Error("Email is required");
-    
-    console.log("User valid:", data.name);
-    return `User valid: ${data.name}`;
-  } catch (error) {
-    console.log("Validation error:", error.message);
-    throw error;
-  }
+const task2Code = `// Prediction:
+// ReferenceError will occur
+
+console.log(city);
+
+let city = "Jaipur";
+
+// TDZ stands for:
+// Temporal Dead Zone`;
+
+
+document.getElementById("task2Code").textContent = task2Code;
+
+let task2Result = "";
+
+try {
+    task2Result += "Trying to access city before declaration...\n";
+
+    console.log(city);
+
+    let city = "Jaipur";
+
+} catch (error) {
+    task2Result += error.name + ": " + error.message;
 }
 
-validateUserBtn.addEventListener("click", function() {
-  try {
-    let userData = {
-      name: userNameInput.value,
-      email: userEmailInput.value
+document.getElementById("task2Output").textContent = task2Result;
+
+
+// ==============================
+// Task 3 : Function Declaration vs Expression
+// ==============================
+
+const task3Code = `// Prediction:
+// sayHi() works
+// greet() throws error
+
+sayHi();
+
+greet();
+
+function sayHi() {
+    console.log("Hi");
+}
+
+var greet = function () {
+    console.log("Hello");
+};
+
+// Function declarations are fully hoisted.
+// Function expressions behave like variables.
+// Here greet is hoisted as undefined.`;
+
+
+document.getElementById("task3Code").textContent = task3Code;
+
+let task3Result = "";
+
+function task3Log(message) {
+    task3Result += message + "\n";
+}
+
+try {
+
+    sayHi();
+
+    function sayHi() {
+        task3Log("Hi");
+    }
+
+    greet();
+
+    var greet = function () {
+        task3Log("Hello");
     };
-    let result = processUser(userData);
-    userOutput.innerHTML = `<span style='color: green;'>✓ ${result}</span>`;
-  } catch (error) {
-    userOutput.innerHTML = `<span style='color: red;'>✗ ${error.message}</span>`;
-  }
-});
+
+} catch (error) {
+    task3Log(error.name + ": " + error.message);
+}
+
+document.getElementById("task3Output").textContent = task3Result;
 
 
-// Task 3: Parse JSON Safely
-let jsonInput = document.querySelector("#json-input");
-let parseJsonBtn = document.querySelector("#parse-json");
-let jsonOutput = document.querySelector("#json-output");
+// ==============================
+// Bonus Task : Call Stack
+// ==============================
 
-parseJsonBtn.addEventListener("click", function() {
-  try {
-    let jsonString = jsonInput.value;
-    let data = JSON.parse(jsonString);
-    jsonOutput.innerHTML = `<span style='color: green;'>✓ Parsed: ${JSON.stringify(data)}</span>`;
-    console.log(data);
-  } catch (error) {
-    jsonOutput.innerHTML = `<span style='color: red;'>✗ Invalid JSON: ${error.message}</span>`;
-    console.log("Invalid JSON:", error.message);
-  }
-});
+const taskBonusCode = `function multiply(a, b) {
+    console.trace("Trace inside multiply");
+    return a * b;
+}
+
+function square(n) {
+    return multiply(n, n);
+}
+
+function printSquare(n) {
+    console.log(square(n));
+}
+
+printSquare(5);
+
+/*
+Call Stack when multiply(5,5) runs:
+
+| multiply(5,5) |
+| square(5)     |
+| printSquare(5)|
+| Global()      |
+
+Final Output:
+25
+*/`;
+
+document.getElementById("taskBonusCode").textContent = taskBonusCode;
+
+let bonusResult = "";
+
+function multiply(a, b) {
+    console.trace("Trace inside multiply");
+    return a * b;
+}
+
+function square(n) {
+    return multiply(n, n);
+}
+
+function printSquare(n) {
+    bonusResult += square(n);
+}
+
+printSquare(5);
+
+document.getElementById("taskBonusOutput").textContent = bonusResult;
