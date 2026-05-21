@@ -1,74 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 18 - Async: Callbacks & Promises</title>
-    <link rel="stylesheet" href="../../shared/css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 20 - The Event Loop</title>
+    <link rel="stylesheet" href="../../shared/css/style.css" />
 </head>
 <body>
-    <div class="page-shell">
-        <header class="site-header">
-            <h1>Day 18: Async: Callbacks & Promises</h1>
-            <p class="subtitle">Lesson: Topics and Demo Code</p>
-        </header>
 
-        <main class="site-content">
-            <article>
-                <h2>Async: Callbacks & Promises</h2>
-                <section>
-                    <h3>Sync VS Async</h3>
-                    <pre id ="task1Code"><code></code></pre>
-                    <h4>Output</h4>
-                    <pre id="lesson1Output"></pre>
-                </section>
+<div class="page-shell">
 
-                <section>
-                    <h3>Callbacks: The Original Pattern</h3>
-                    <pre id ="task2Code"><code></code></pre>
-                    <h4>Output</h4>
-                    <pre id="lesson2Output"></pre>
-                </section>
+    <header class="site-header">
+        <h1>Day 20: The Event Loop</h1>
+        <p class="subtitle">homework</p>
+    </header>
 
-                <section>
-                    <h3>Callback Hell</h3>
-                    <pre id ="task3Code"><code></code></pre>
-                    <h4>Output</h4>
-                    <pre id="lesson3Output"></pre>
-                </section>
+    <main class="site-content">
+        <article>
 
-                <section>
-                    <h3>Promise States and Creation</h3>
-                    <pre id ="task4Code"><code></code></pre>
-                    <h4>Output</h4>
-                    <pre id="lesson4Output"></pre>
-                </section>
+            <h2>Homework</h2>
 
-                <section>
-                    <h3>.then / .catch / .finally</h3>
-                    <pre id ="task5Code"><code></code></pre>
-                    <h4>Output</h4>
-                    <pre id="lesson5Output"></pre>
-                </section>
+            <!-- TASK 1 -->
+            <section>
+                <h3>Task 1 : Predict the Output Again</h3>
+                <p>
+                    Take any 3 of the predict-the-output snippets and re-do them on paper without running. Then run to check.
+                </p>
+                <pre id="task1Code"></pre>
+                <h4>Output</h4>
+                <pre id="homework1Output"></pre>
+            </section>
 
-                <section>
-                    <h3>Promise Combinators (all/race/allSettled/any)</h3>
-                    <pre id ="task6Code"><code></code></pre>
-                    <h4>Output</h4>
-                    <pre id="lesson6Output"></pre>
-                </section>
+            <!-- TASK 2 -->
+            <section>
+                <h3>Task 2 : Loupe Demo</h3>
+                <p>Visit <strong>latentflip.com/loupe</strong>  and paste in <br><code>console.log("1");<br>setTimeout(() => console.log("2"), 0); console.log("3");</code>  — watch it run.</p>
+                <pre id="task2Code"></pre>
+                <h4>Output</h4>
+                <pre id="homework2Output"></pre>
+            </section>
 
-                <section>
-                    <h3>Promise.resolve / Promise.reject</h3>
-                    <pre id ="task7Code"><code></code></pre>
-                    <h4>Output</h4>
-                    <pre id="lesson7Output"></pre>
-                </section>
+            <!-- TASK 3 -->
+            <section>
+                <h3>Task 3 : Chunk Processing</h3>
+                <p>
+                    Build a <strong>chunk(array, fn, chunkSize)</strong> helper that processes an array in chunks of <strong>chunkSize</strong>, yielding to the event loop with <strong>setTimeout(0)</strong> between chunks. Test with a 100k-item array.
+                </p>
+                <pre id="task3Code"></pre>
+                <h4>Output</h4>
+                <pre id="homework3Output"></pre>
+            </section>
 
-            </article>
-        </main>
+            <!-- TASK 4 -->
+            <section>
+                <h3>Task 4 : await is a Microtask</h3>
+                <p>
+                  Write a snippet that proves <strong>await</strong> is a microtask: schedule an <strong>await</strong> and a <strong>setTimeout(0)</strong>, predict which runs first.
+                </p>
+                <pre id="task4Code"></pre>
+                <h4>Output</h4>
+                <pre id="homework4Output"></pre>
+            </section>
 
-                <aside class="site-outline">
+        </article>
+    </main>
+            <aside class="site-outline">
             <h2>Curriculum</h2>
             <nav>
                 <ul>
@@ -182,7 +178,7 @@
                         </ul>
                     </details>
                     
-                    <details open>
+                    <details>
                         <summary>Day 13 — Hoisting and TDZ</summary>
                         <ul>
                             <li><a href="lesson.html" aria-current="page">Lesson</a></li>
@@ -215,11 +211,22 @@
                             <li><a href="../../day-18/html/hands-on.html">Hands-on</a></li>
                             <li><a href="../../day-18/html/homework.html">Homework</a></li>
                         </ul>
-                    </details>                   
+                    </details> 
+                    <details open>
+                        <summary>Day 20 — The Event Loop </summary>
+                        <ul>
+                            <li><a href="../../day-20/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-20/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-20/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>                  
                 </ul>
             </nav>
         </aside>
-    </div>
-    <script src="../js/lesson.js"></script>
+
+</div>
+
+<script src="../js/homework.js"></script>
+
 </body>
 </html>

@@ -3,68 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 18 - Async: Callbacks & Promises</title>
+    <title>Day 20 - The Event Loop</title>
     <link rel="stylesheet" href="../../shared/css/style.css">
 </head>
 <body>
     <div class="page-shell">
         <header class="site-header">
-            <h1>Day 18: Async: Callbacks & Promises</h1>
-            <p class="subtitle">Lesson: Topics and Demo Code</p>
+            <h1>Day 20: The Event Loop</h1>
+            <p class="subtitle">hands-on</p>
         </header>
 
         <main class="site-content">
             <article>
-                <h2>Async: Callbacks & Promises</h2>
+                <h2>The Event Loop</h2>
                 <section>
-                    <h3>Sync VS Async</h3>
-                    <pre id ="task1Code"><code></code></pre>
+                    <h3>Task 1 : Predict the output</h3>
+                    <ol>
+                        <li>Type this exactly:</li>
+                        <li>console.log("1");</li>
+                        <li>setTimeout(() => console.log("2"), 0);</li>
+                        <li>Promise.resolve().then(() => console.log("3"));</li>
+                        <li>console.log("4");</li>
+                        <li>Predict the output BEFORE running.</li>
+                        <li>Run. Match against your prediction.</li>
+                        <li>In a comment, list which lines were sync, which microtask, which macrotask.</li>
+                    </ol>
+                    <pre id = "task1Code"><code></code></pre>
                     <h4>Output</h4>
-                    <pre id="lesson1Output"></pre>
+                    <pre id="task1Output"></pre>
                 </section>
 
                 <section>
-                    <h3>Callbacks: The Original Pattern</h3>
-                    <pre id ="task2Code"><code></code></pre>
+                    <h3>Task 2 : Two Promises and a Timer</h3>
+                    <ol>
+                        <li>Run this:</li>
+                        <li>console.log("A");</li>
+                        <li>setTimeout(() => console.log("B"), 0);</li>
+                        <li>Promise.resolve().then(() => console.log("C")).then(() => console.log("D"));</li>
+                        <li>queueMicrotask(() => console.log("E"))</li>
+                        <li>console.log("F");</li>
+                        <li>Predict, run, compare.</li>
+                        <li>In a comment, draw the queues at each step.</li>
+                    </ol>
+                    <pre id ="task2Code"></pre>
                     <h4>Output</h4>
-                    <pre id="lesson2Output"></pre>
+                    <pre id="task2Output"></pre>
                 </section>
 
                 <section>
-                    <h3>Callback Hell</h3>
-                    <pre id ="task3Code"><code></code></pre>
+                    <h3>Task 3 : Block the Loop</h3>
+                    <ol>
+                        <li>Write a blockFor(ms) that busy-waits for ms milliseconds (use a while with Date.now()).</li>
+                        <li>Schedule a setTimeout(() => console.log("timer"), 100).</li>
+                        <li>Immediately call blockFor(2000) then console.log("after block").</li>
+                        <li>Note the timer doesn't fire until well after 100ms</li>
+                    </ol>
+                    <pre id ="task3Code"></pre>
                     <h4>Output</h4>
-                    <pre id="lesson3Output"></pre>
+                    <pre id="task3Output"></pre>
                 </section>
 
                 <section>
-                    <h3>Promise States and Creation</h3>
-                    <pre id ="task4Code"><code></code></pre>
+                    <h3>Bonus Task :  Microtask Storm</h3>
+                    <ol>
+                        <li>Write a function that schedules 5 setTimeout(fn, 0) calls.</li>
+                        <li>Inside ONE of the timers, schedule 3 Promise.resolve().then(...).</li>
+                        <li>Predict the output. Run. Verify.</li>
+                        <li>In a comment, explain how microtasks "starve" macrotasks if abused.</li>
+                    </ol>
+                    <pre id ="task4Code"></pre>
                     <h4>Output</h4>
-                    <pre id="lesson4Output"></pre>
+                    <pre id="taskBonusOutput"></pre>
                 </section>
-
-                <section>
-                    <h3>.then / .catch / .finally</h3>
-                    <pre id ="task5Code"><code></code></pre>
-                    <h4>Output</h4>
-                    <pre id="lesson5Output"></pre>
-                </section>
-
-                <section>
-                    <h3>Promise Combinators (all/race/allSettled/any)</h3>
-                    <pre id ="task6Code"><code></code></pre>
-                    <h4>Output</h4>
-                    <pre id="lesson6Output"></pre>
-                </section>
-
-                <section>
-                    <h3>Promise.resolve / Promise.reject</h3>
-                    <pre id ="task7Code"><code></code></pre>
-                    <h4>Output</h4>
-                    <pre id="lesson7Output"></pre>
-                </section>
-
             </article>
         </main>
 
@@ -173,7 +183,7 @@
                         </ul>
                     </details>
                     
-                    <details >
+                    <details>
                         <summary>Day 12 — Error Handling</summary>
                         <ul>
                             <li><a href="../../day-12/html/lesson.html">Lesson</a></li>
@@ -182,7 +192,7 @@
                         </ul>
                     </details>
                     
-                    <details open>
+                    <details>
                         <summary>Day 13 — Hoisting and TDZ</summary>
                         <ul>
                             <li><a href="lesson.html" aria-current="page">Lesson</a></li>
@@ -191,7 +201,7 @@
                         </ul>
                     </details>
 
-                      <details >
+                      <details>
                         <summary>Day 14 — Scope & Clouser </summary>
                         <ul>
                             <li><a href="../../day-14/html/lesson.html">Lesson</a></li>
@@ -215,11 +225,19 @@
                             <li><a href="../../day-18/html/hands-on.html">Hands-on</a></li>
                             <li><a href="../../day-18/html/homework.html">Homework</a></li>
                         </ul>
-                    </details>                   
+                    </details> 
+                    <details open>
+                        <summary>Day 20 — The Event Loop </summary>
+                        <ul>
+                            <li><a href="../../day-20/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-20/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-20/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>                  
                 </ul>
             </nav>
         </aside>
     </div>
-    <script src="../js/lesson.js"></script>
+<script src="../js/hands-on.js"></script>
 </body>
 </html>

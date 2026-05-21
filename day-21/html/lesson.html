@@ -3,68 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 18 - Async: Callbacks & Promises</title>
+    <title>Day 20 - The Event Loop</title>
     <link rel="stylesheet" href="../../shared/css/style.css">
 </head>
 <body>
     <div class="page-shell">
         <header class="site-header">
-            <h1>Day 18: Async: Callbacks & Promises</h1>
+            <h1>Day 20: The Event Loop</h1>
             <p class="subtitle">Lesson: Topics and Demo Code</p>
         </header>
 
         <main class="site-content">
             <article>
-                <h2>Async: Callbacks & Promises</h2>
+                <h2>The Event Loop</h2>
                 <section>
-                    <h3>Sync VS Async</h3>
-                    <pre id ="task1Code"><code></code></pre>
-                    <h4>Output</h4>
-                    <pre id="lesson1Output"></pre>
+                    <h3>Topic 1 : Single-Threaded</h3>
+                    <pre><code>JS runs on ONE thread — one call stack, one statement at a time. 
+Async work is DELEGATED to the runtime (browser Web APIs / Node libuv). 
+When done, callbacks land on a queue. The event loop pulls them when the stack is free.</code></pre>
                 </section>
 
                 <section>
-                    <h3>Callbacks: The Original Pattern</h3>
-                    <pre id ="task2Code"><code></code></pre>
+                    <h3>Topic 2 : setTimeout(0) Mystery — Solved</h3>
+                    <pre id ="task2Code"></pre>
                     <h4>Output</h4>
                     <pre id="lesson2Output"></pre>
                 </section>
 
                 <section>
-                    <h3>Callback Hell</h3>
-                    <pre id ="task3Code"><code></code></pre>
+                    <h3>Topic 3 : Microtask vs Macrotask</h3>
+                    <pre id ="task3Code"></pre>
                     <h4>Output</h4>
                     <pre id="lesson3Output"></pre>
                 </section>
 
                 <section>
-                    <h3>Promise States and Creation</h3>
-                    <pre id ="task4Code"><code></code></pre>
+                    <h3>Topic 4 : Don't Block the Loop</h3>
+                    <pre id ="task4Code"></pre>
                     <h4>Output</h4>
                     <pre id="lesson4Output"></pre>
                 </section>
-
-                <section>
-                    <h3>.then / .catch / .finally</h3>
-                    <pre id ="task5Code"><code></code></pre>
-                    <h4>Output</h4>
-                    <pre id="lesson5Output"></pre>
-                </section>
-
-                <section>
-                    <h3>Promise Combinators (all/race/allSettled/any)</h3>
-                    <pre id ="task6Code"><code></code></pre>
-                    <h4>Output</h4>
-                    <pre id="lesson6Output"></pre>
-                </section>
-
-                <section>
-                    <h3>Promise.resolve / Promise.reject</h3>
-                    <pre id ="task7Code"><code></code></pre>
-                    <h4>Output</h4>
-                    <pre id="lesson7Output"></pre>
-                </section>
-
             </article>
         </main>
 
@@ -182,7 +160,7 @@
                         </ul>
                     </details>
                     
-                    <details open>
+                    <details>
                         <summary>Day 13 — Hoisting and TDZ</summary>
                         <ul>
                             <li><a href="lesson.html" aria-current="page">Lesson</a></li>
@@ -215,11 +193,23 @@
                             <li><a href="../../day-18/html/hands-on.html">Hands-on</a></li>
                             <li><a href="../../day-18/html/homework.html">Homework</a></li>
                         </ul>
+                    </details> 
+                    <details>
+                        <summary>Day 20 — The Event Loop </summary>
+                        <ul>
+                            <li><a href="../../day-20/html/lesson.html">Lesson</a></li>
+                        </ul>
+                    </details>  
+                    <details open>
+                        <summary>Day 21 — Advanced Array & Object Patterns</summary>
+                        <ul>
+                            <li><a href="../../day-21/html/lesson.html">Lesson</a></li>
+                        </ul>
                     </details>                   
                 </ul>
             </nav>
         </aside>
     </div>
-    <script src="../js/lesson.js"></script>
+<script src="../js/lesson.js"></script>
 </body>
 </html>
