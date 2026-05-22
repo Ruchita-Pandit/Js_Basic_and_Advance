@@ -3,74 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 9 - Modern Syntax </title>
+    <title>Day 21 - Advanced Array & Object Patterns</title>
     <link rel="stylesheet" href="../../shared/css/style.css">
 </head>
 <body>
     <div class="page-shell">
         <header class="site-header">
-            <h1>Day 9: Modern Syntax</h1>
-            <p class="subtitle">Hands-on: In-class Tasks</p>
+            <h1>Day 21: Advanced Array & Object Patterns</h1>
+            <p class="subtitle">hands-on</p>
         </header>
+
         <main class="site-content">
             <article>
-                <h2>Hands-on Tasks</h2>
-                
+                <h2>Advanced Array & Object Patterns</h2>
                 <section>
-                    <h3>Task 1: Template Literal Sentence</h3>
-                    <pre><code>const item = "Laptop";
-const price = 60000;
-const tax = 0.18;
+    <h3>Task 1 : Immutable Update in Deeply Nested Object</h3>
+    <ol>
+        <li>Create a deeply nested object with at least 4 levels.</li>
+        <li>Write a single immutable update that changes one leaf value.</li>
+        <li>Use spread syntax at every required level.</li>
+        <li>Verify unchanged branches still share references using <code>===</code>.</li>
+    </ol>
 
-const sentence = `The ${item} costs â‚¹${price} + â‚¹${price * tax} GST = â‚¹${price + (price * tax)}.`;
-const multiline = `The ${item} costs 
-â‚¹${price} + â‚¹${price * tax} GST = 
-â‚¹${price + (price * tax)}.`;
+    <pre id="task1Code"></pre>
 
-console.log(sentence);
-console.log(multiline);</code></pre>
-                    <h4>Output</h4>
-                    <pre id="task1Output"></pre>
-                </section>
+    <h4>Output</h4>
+    <pre id="homework1Output"></pre>
+</section>
 
-                <section>
-                    <h3>Task 2: Array + Object Destructuring</h3>
-                    <pre><code>const scores = [88, 75, 92, 60, 45];
-const [top1, second, ...others] = scores;
+<section>
+    <h3>Task 2 : Implement deepFreeze()</h3>
+    <ol>
+        <li>Create a custom <code>deepFreeze(obj)</code> function from scratch.</li>
+        <li>Recursively freeze all nested objects.</li>
+        <li>Test it using a 3-level nested object.</li>
+        <li>Try mutating nested values and verify changes do not happen.</li>
+    </ol>
 
-console.log(top1);    // 88
-console.log(second);  // 75
-console.log(others);  // [92, 60, 45]
+    <pre id="task2Code"></pre>
 
-const user = {
-  name: "Anaya",
-  age: 21,
-  address: {
-    city: "Jaipur",
-    pincode: "302001"
-  }
-};
+    <h4>Output</h4>
+    <pre id="homework2Output"></pre>
+</section>
 
-const { name, age: userAge, address: { city } } = user;
-console.log(name);     // "Anaya"
-console.log(userAge);  // 21
-console.log(city);     // "Jaipur"</code></pre>
-                    <h4>Output</h4>
-                    <pre id="task2Output"></pre>
-                </section>
+<section>
+    <h3>Task 3 : structuredClone vs JSON Clone</h3>
+    <ol>
+        <li>Create an object containing a <code>Date</code>, <code>Map</code>, and <code>Set</code>.</li>
+        <li>Clone it using <code>structuredClone()</code>.</li>
+        <li>Verify all special object types are preserved.</li>
+        <li>Observe how this differs from JSON cloning.</li>
+    </ol>
 
-                <section>
-                    <h3>Task 3: Spread Operator</h3>
-                    <pre><code>const defaults = { theme: "light", lang: "en", notifications: true };
-const userPrefs = { theme: "dark", fontSize: 16 };
+    <pre id="task3Code"></pre>
 
-const merged = { ...defaults, ...userPrefs };
-console.log(merged);
-// { theme: "dark", lang: "en", notifications: true, fontSize: 16 }</code></pre>
-                    <h4>Output</h4>
-                    <pre id="task3Output"></pre>
-                </section>
+    <h4>Output</h4>
+    <pre id="homework3Output"></pre>
+</section>
 
+<section>
+    <h3>Task 4 : Create pick(obj, keys) Helper</h3>
+    <ol>
+        <li>Write a helper function <code>pick(obj, keys)</code>.</li>
+        <li>Return a new object containing only the selected keys.</li>
+        <li>Use computed property names.</li>
+        <li>Test it with a sample user object.</li>
+    </ol>
+
+    <pre id="task4Code"></pre>
+
+    <h4>Output</h4>
+    <pre id="homework4Output"></pre>
+</section>
             </article>
         </main>
 
@@ -89,7 +93,7 @@ console.log(merged);
                         </ul>
                     </details>
                     
-                    <details >
+                    <details>
                         <summary>Day 2 — Variables</summary>
                         <ul>
                             <li><a href="../../day-2/html/lesson.html">Lesson</a></li>
@@ -152,12 +156,12 @@ console.log(merged);
                         </ul>
                     </details>
                     
-                    <details open>
+                    <details >
                         <summary>Day 9 — Modern Syntax</summary>
                         <ul>
-                            <li><a href="lesson.html">Lesson</a></li>
-                            <li><a href="hands-on.html" aria-current="page">Hands-on</a></li>
-                            <li><a href="homework.html">Homework</a></li>
+                            <li><a href="../../day-9/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-9/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-9/html/homework.html">Homework</a></li>
                         </ul>
                     </details>
                     
@@ -179,7 +183,7 @@ console.log(merged);
                         </ul>
                     </details>
                     
-                    <details >
+                    <details>
                         <summary>Day 12 — Error Handling</summary>
                         <ul>
                             <li><a href="../../day-12/html/lesson.html">Lesson</a></li>
@@ -188,16 +192,16 @@ console.log(merged);
                         </ul>
                     </details>
                     
-                    <details >
+                    <details>
                         <summary>Day 13 — Hoisting and TDZ</summary>
                         <ul>
-                            <li><a href="../../day-13/html/lesson.html">Lesson</a></li>
-                            <li><a href="../../day-13/html/hands-on.html">Hands-on</a></li>
-                            <li><a href="../../day-13/html/homework.html">Homework</a></li>
+                            <li><a href="lesson.html" aria-current="page">Lesson</a></li>
+                            <li><a href="hands-on.html">Hands-on</a></li>
+                            <li><a href="homework.html">Homework</a></li>
                         </ul>
                     </details>
 
-                      <details >
+                      <details>
                         <summary>Day 14 — Scope & Clouser </summary>
                         <ul>
                             <li><a href="../../day-14/html/lesson.html">Lesson</a></li>
@@ -213,8 +217,7 @@ console.log(merged);
                             <li><a href="../../day-15/html/hands-on.html">Hands-on</a></li>
                             <li><a href="../../day-15/html/homework.html">Homework</a></li>
                         </ul>
-                    </details>
-
+                    </details>   
                     <details >
                         <summary>Day 18 —  Async: Callbacks & Promises </summary>
                         <ul>
@@ -223,7 +226,6 @@ console.log(merged);
                             <li><a href="../../day-18/html/homework.html">Homework</a></li>
                         </ul>
                     </details> 
-
                     <details>
                         <summary>Day 20 — The Event Loop </summary>
                         <ul>
@@ -231,23 +233,19 @@ console.log(merged);
                             <li><a href="../../day-20/html/hands-on.html">Hands-on</a></li>
                             <li><a href="../../day-20/html/homework.html">Homework</a></li>
                         </ul>
-                    </details> 
-                    <details>
+                    </details>  
+                    <details open>
                         <summary>Day 21 — Advanced Array & Object Patterns</summary>
                         <ul>
                             <li><a href="../../day-21/html/lesson.html">Lesson</a></li>
                             <li><a href="../../day-21/html/hands-on.html">Hands-on</a></li>
                             <li><a href="../../day-21/html/homework.html">Homework</a></li>
                         </ul>
-                    </details>
+                    </details>                 
                 </ul>
             </nav>
         </aside>
     </div>
-    <script src="../js/hands-on.js"></script>
+<script src="../js/homework.js"></script>
 </body>
 </html>
-
-
-
-

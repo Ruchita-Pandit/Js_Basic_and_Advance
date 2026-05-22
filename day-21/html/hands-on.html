@@ -3,74 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 9 - Modern Syntax </title>
+    <title>Day 21 - Advanced Array & Object Patterns</title>
     <link rel="stylesheet" href="../../shared/css/style.css">
 </head>
 <body>
     <div class="page-shell">
         <header class="site-header">
-            <h1>Day 9: Modern Syntax</h1>
-            <p class="subtitle">Hands-on: In-class Tasks</p>
+            <h1>Day 21: Advanced Array & Object Patterns</h1>
+            <p class="subtitle">hands-on</p>
         </header>
+
         <main class="site-content">
             <article>
-                <h2>Hands-on Tasks</h2>
-                
+                <h2>Advanced Array & Object Patterns</h2>
                 <section>
-                    <h3>Task 1: Template Literal Sentence</h3>
-                    <pre><code>const item = "Laptop";
-const price = 60000;
-const tax = 0.18;
-
-const sentence = `The ${item} costs â‚¹${price} + â‚¹${price * tax} GST = â‚¹${price + (price * tax)}.`;
-const multiline = `The ${item} costs 
-â‚¹${price} + â‚¹${price * tax} GST = 
-â‚¹${price + (price * tax)}.`;
-
-console.log(sentence);
-console.log(multiline);</code></pre>
+                    <h3>Task 1 :  Prove Shallow Clone Bug</h3>
+                    <ol>
+                        <li>Create <code>const orig = { name: "Priya", addr: { city: "Jaipur" } }</code>.</li>
+                        <li>Make a shallow copy with spread: <code>const copy = { ...orig }</code>.</li>
+                        <li>Mutate <code>copy.addr.city = "Mumbai"</code>. Log <strong>orig.addr.city</strong>. Note the bug.</li>
+                        <li>Now use <code>structuredClone(orig)</code> and repeat. Confirm <strong>orig</strong> is untouched.</li>
+                    </ol>
+                    <pre id = "task1Code"><code></code></pre>
                     <h4>Output</h4>
                     <pre id="task1Output"></pre>
                 </section>
 
                 <section>
-                    <h3>Task 2: Array + Object Destructuring</h3>
-                    <pre><code>const scores = [88, 75, 92, 60, 45];
-const [top1, second, ...others] = scores;
-
-console.log(top1);    // 88
-console.log(second);  // 75
-console.log(others);  // [92, 60, 45]
-
-const user = {
-  name: "Anaya",
-  age: 21,
-  address: {
-    city: "Jaipur",
-    pincode: "302001"
-  }
-};
-
-const { name, age: userAge, address: { city } } = user;
-console.log(name);     // "Anaya"
-console.log(userAge);  // 21
-console.log(city);     // "Jaipur"</code></pre>
+                    <h3>Task 2 : Immutable Nested Update</h3>
+                    <ol>
+                        <li>Take this state: <code>const state = { user: { name: "Priya", prefs: { theme: "light", lang: "en" } } }</code>.</li>
+                        <li>Write code that produces a NEW state with <strong>prefs.theme</strong> set to <strong>"dark"</strong>, leaving <strong>state</strong> untouched.</li>
+                        <li>Use spread, don't mutate.</li>
+                        <li>Verify <strong>state.user.prefs.theme</strong> is still <strong>"light"</strong>.</li>
+                    </ol>
+                    <pre id ="task2Code"></pre>
                     <h4>Output</h4>
                     <pre id="task2Output"></pre>
                 </section>
 
                 <section>
-                    <h3>Task 3: Spread Operator</h3>
-                    <pre><code>const defaults = { theme: "light", lang: "en", notifications: true };
-const userPrefs = { theme: "dark", fontSize: 16 };
-
-const merged = { ...defaults, ...userPrefs };
-console.log(merged);
-// { theme: "dark", lang: "en", notifications: true, fontSize: 16 }</code></pre>
+                    <h3>Task 3 : Update One Item in an Array</h3>
+                    <ol>
+                        <li>Take <code>const tasks = [{ id: 1, title: "Learn JS", done: false }, { id: 2, title: "Build app", done: false }]</code>.</li>
+                        <li>Write a function <strong>toggleDone(tasks, id)</strong> that returns a NEW array with the matching task's done flipped — others untouched.</li>
+                        <li>Call it twice on the same tasks. Verify originals never mutate.</li>
+                        <li>Use <strong>.map</strong> and spread.</li>
+                    </ol>
+                    <pre id ="task3Code"></pre>
                     <h4>Output</h4>
                     <pre id="task3Output"></pre>
                 </section>
 
+                <section>
+                    <h3>Bonus Task :  Safe Deep Read</h3>
+                    <ol>
+                        <li>Take a partial API response: <code>const data = { user: { name: "Priya", profile: { city: null } } }</code>.</li>
+                        <li>Write a single expression that reads <strong>data.user.profile.city</strong> and falls back to "Unknown" if anything in the chain is null/undefined.</li>
+                        <li>Now another expression reading data.user.profile.bio?.length ?? 0.</li>
+                        <li>Try with data = {} — confirm both return the fallbacks without crashing.</li>
+                    </ol>
+                    <pre id ="task4Code"></pre>
+                    <h4>Output</h4>
+                    <pre id="taskBonusOutput"></pre>
+                </section>
             </article>
         </main>
 
@@ -89,7 +85,7 @@ console.log(merged);
                         </ul>
                     </details>
                     
-                    <details >
+                    <details>
                         <summary>Day 2 — Variables</summary>
                         <ul>
                             <li><a href="../../day-2/html/lesson.html">Lesson</a></li>
@@ -152,12 +148,12 @@ console.log(merged);
                         </ul>
                     </details>
                     
-                    <details open>
+                    <details >
                         <summary>Day 9 — Modern Syntax</summary>
                         <ul>
-                            <li><a href="lesson.html">Lesson</a></li>
-                            <li><a href="hands-on.html" aria-current="page">Hands-on</a></li>
-                            <li><a href="homework.html">Homework</a></li>
+                            <li><a href="../../day-9/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-9/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-9/html/homework.html">Homework</a></li>
                         </ul>
                     </details>
                     
@@ -179,7 +175,7 @@ console.log(merged);
                         </ul>
                     </details>
                     
-                    <details >
+                    <details>
                         <summary>Day 12 — Error Handling</summary>
                         <ul>
                             <li><a href="../../day-12/html/lesson.html">Lesson</a></li>
@@ -188,16 +184,16 @@ console.log(merged);
                         </ul>
                     </details>
                     
-                    <details >
+                    <details>
                         <summary>Day 13 — Hoisting and TDZ</summary>
                         <ul>
-                            <li><a href="../../day-13/html/lesson.html">Lesson</a></li>
-                            <li><a href="../../day-13/html/hands-on.html">Hands-on</a></li>
-                            <li><a href="../../day-13/html/homework.html">Homework</a></li>
+                            <li><a href="lesson.html" aria-current="page">Lesson</a></li>
+                            <li><a href="hands-on.html">Hands-on</a></li>
+                            <li><a href="homework.html">Homework</a></li>
                         </ul>
                     </details>
 
-                      <details >
+                      <details>
                         <summary>Day 14 — Scope & Clouser </summary>
                         <ul>
                             <li><a href="../../day-14/html/lesson.html">Lesson</a></li>
@@ -213,8 +209,7 @@ console.log(merged);
                             <li><a href="../../day-15/html/hands-on.html">Hands-on</a></li>
                             <li><a href="../../day-15/html/homework.html">Homework</a></li>
                         </ul>
-                    </details>
-
+                    </details>   
                     <details >
                         <summary>Day 18 —  Async: Callbacks & Promises </summary>
                         <ul>
@@ -223,8 +218,7 @@ console.log(merged);
                             <li><a href="../../day-18/html/homework.html">Homework</a></li>
                         </ul>
                     </details> 
-
-                    <details>
+                    <details open>
                         <summary>Day 20 — The Event Loop </summary>
                         <ul>
                             <li><a href="../../day-20/html/lesson.html">Lesson</a></li>
@@ -232,22 +226,17 @@ console.log(merged);
                             <li><a href="../../day-20/html/homework.html">Homework</a></li>
                         </ul>
                     </details> 
-                    <details>
+                    <details open>
                         <summary>Day 21 — Advanced Array & Object Patterns</summary>
                         <ul>
                             <li><a href="../../day-21/html/lesson.html">Lesson</a></li>
                             <li><a href="../../day-21/html/hands-on.html">Hands-on</a></li>
                             <li><a href="../../day-21/html/homework.html">Homework</a></li>
                         </ul>
-                    </details>
                 </ul>
             </nav>
         </aside>
     </div>
-    <script src="../js/hands-on.js"></script>
+<script src="../js/hands-on.js"></script>
 </body>
 </html>
-
-
-
-

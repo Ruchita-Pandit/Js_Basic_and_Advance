@@ -3,45 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 20 - The Event Loop</title>
+    <title>Day 21 - Advanced Array & Object Patterns</title>
     <link rel="stylesheet" href="../../shared/css/style.css">
 </head>
 <body>
     <div class="page-shell">
         <header class="site-header">
-            <h1>Day 20: The Event Loop</h1>
+            <h1>Day 21 : Advanced Array & Object Patterns </h1>
             <p class="subtitle">Lesson: Topics and Demo Code</p>
         </header>
 
         <main class="site-content">
             <article>
-                <h2>The Event Loop</h2>
+                <h2>Advanced Array & Object Patterns</h2>
                 <section>
-                    <h3>Topic 1 : Single-Threaded</h3>
-                    <pre><code>JS runs on ONE thread — one call stack, one statement at a time. 
-Async work is DELEGATED to the runtime (browser Web APIs / Node libuv). 
-When done, callbacks land on a queue. The event loop pulls them when the stack is free.</code></pre>
+                    <h3>Topic 1 : Shallow vs Deep Clone</h3>
+                    <pre id ="task1Code"></pre>
+                    <h4>Output</h4>
+                    <pre id="lesson1Output"></pre>
                 </section>
 
                 <section>
-                    <h3>Topic 2 : setTimeout(0) Mystery — Solved</h3>
+                    <h3>Topic 2 :  structuredClone</h3>
                     <pre id ="task2Code"></pre>
                     <h4>Output</h4>
                     <pre id="lesson2Output"></pre>
                 </section>
 
                 <section>
-                    <h3>Topic 3 : Microtask vs Macrotask</h3>
+                    <h3>Topic 3 : Object.freeze</h3>
                     <pre id ="task3Code"></pre>
                     <h4>Output</h4>
                     <pre id="lesson3Output"></pre>
                 </section>
 
                 <section>
-                    <h3>Topic 4 : Don't Block the Loop</h3>
+                    <h3>Topic 4 : Immutable Updates</h3>
                     <pre id ="task4Code"></pre>
                     <h4>Output</h4>
                     <pre id="lesson4Output"></pre>
+                </section>
+
+                <section>
+                    <h3>Topic 5 : Advanced Destructuring</h3>
+                    <pre id ="task5Code"></pre>
+                    <h4>Output</h4>
+                    <pre id="lesson5Output"></pre>
+                </section>
+
+                <section>
+                    <h3>Topic 6 :  Computed Keys</h3>
+                    <pre id ="task6Code"></pre>
+                    <h4>Output</h4>
+                    <pre id="lesson6Output"></pre>
+                </section>
+
+                <section>
+                    <h3>Topic 7 : Immutable Updates</h3>
+                    <pre id ="task7Code"></pre>
+                    <h4>Output</h4>
+                    <pre id="lesson7Output"></pre>
                 </section>
             </article>
         </main>
@@ -198,12 +219,16 @@ When done, callbacks land on a queue. The event loop pulls them when the stack i
                         <summary>Day 20 — The Event Loop </summary>
                         <ul>
                             <li><a href="../../day-20/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-20/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-20/html/homework.html">Homework</a></li>
                         </ul>
                     </details>  
                     <details open>
                         <summary>Day 21 — Advanced Array & Object Patterns</summary>
                         <ul>
                             <li><a href="../../day-21/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-21/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-21/html/homework.html">Homework</a></li>
                         </ul>
                     </details>                   
                 </ul>
