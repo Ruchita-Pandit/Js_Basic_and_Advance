@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 22 - Map, Set & WeakMap Patterns</title>
+    <link rel="stylesheet" href="../../shared/css/style.css" />
+</head>
+
+<body>
+    <div class="page-shell">
+
+        <header class="site-header">
+            <h1>Day 22: Map, Set & WeakMap Patterns</h1>
+            <p class="subtitle">hands-on</p>
+        </header>
+
+        <main class="site-content">
+            <article>
+
+                <h2>Map, Set & WeakMap Practice</h2>
+
+                <!-- TASK 1 -->
+                <section>
+                    <h3>Task 1 : Map vs Object</h3>
+
+                    <ol>
+                        <li>Build a Map of products: <code>"pen" → 50</code>, <code>"book" → 200</code>, <code>"bag" → 800</code>.</li>
+                        <li>Iterate with <code>for...of</code> and log each as: <code>item: ₹price</code>.</li>
+                        <li>Use: <code>.has()</code>, <code>.get()</code>, <code>.delete()</code>, <code>.size</code>.</li>
+                        <li>Convert the Map into an Object using <code>Object.fromEntries()</code>.</li>
+                        <li>Convert the Object back into a Map using: <code>new Map(Object.entries(...))</code>.</li>
+                    </ol>
+                    <pre id="task1Code"><code></code></pre>
+                    <h4>Output</h4>
+                    <pre id="task1Output"></pre>
+                </section>
+
+                <!-- TASK 2 -->
+                <section>
+                    <h3>Task 2 : Deduplicate with Set</h3>
+                    <ol>
+                        <li>Take this array: <code>[101, 102, 103, 101, 104, 102, 105]</code>.</li>
+                        <li>Use a <code>Set</code> to remove duplicates.</li>
+                        <li>Convert the Set back into an array.</li>
+                        <li>Compute the count of UNIQUE IDs.</li>
+                        <li>Try with mixed types: <code>[1, "1", 1, true, 1n]</code>.</li>
+                        <li>Predict and verify the output.</li>
+                    </ol>
+                    <pre id="task2Code"><code></code></pre>
+                    <h4>Output</h4>
+                    <pre id="task2Output"></pre>
+                </section>
+
+                <!-- TASK 3 -->
+                <section>
+                    <h3>Task 3 : Cache with Map</h3>
+                    <ol>
+                        <li>Write a <code>memoize(fn)</code> function using a <code>Map</code> instead of an object.</li>
+                        <li>Wrap an <code>expensiveSquare(n)</code> function that logs: <code>"computing..."</code>and returns: <code>n * n</code>.</li>
+                        <li>Verify that calling it twice with<code>5</code>only logs <code>"computing..."</code> once.</li>
+                        <li>Add a <code>cache.size</code> check.</li>
+                    </ol>
+                    <pre id="task3Code"><code></code></pre>
+                    <h4>Output</h4>
+                    <pre id="task3Output"></pre>
+                </section>
+
+                <!-- BONUS TASK -->
+                <section>
+                    <h3>Bonus Task : WeakMap for Private Data</h3>
+                    <ol>
+                        <li>Use a <code>WeakMap</code> to store metadata for objects without modifying them.</li>
+                        <li>Build: <code>attach(obj, data)</code> and <code>get(obj)</code>.</li>
+                        <li>Attach: <code>{ lastClick: Date.now() }</code> to two button objects.</li>
+                        <li>Drop one button reference.</li>
+                        <li>Conceptually, the related WeakMap entry
+                            becomes eligible for garbage collection.
+                        </li>
+                    </ol>
+                    <pre id="task4Code"><code></code></pre>
+                    <h4>Output</h4>
+                    <pre id="task4Output"></pre>
+                </section>
+            </article>
+        </main>
+
+        <!-- SIDEBAR -->
+        <aside class="site-outline">
+            <h2>Curriculum</h2>
+            <nav>
+                <ul>
+
+                    <li>
+                        <a href="../../index.html">Overview</a>
+                    </li>
+
+                    <details>
+                        <summary>Day 1 — Basics</summary>
+                        <ul>
+                            <li><a href="../../day-1/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-1/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-1/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 2 — Variables</summary>
+                        <ul>
+                            <li><a href="../../day-2/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-2/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-2/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 7 — Arrays</summary>
+                        <ul>
+                            <li><a href="../../day-7/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-7/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-7/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 8 — Objects</summary>
+                        <ul>
+                            <li><a href="../../day-8/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-8/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-8/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 9 — Modern Syntax</summary>
+                        <ul>
+                            <li><a href="../../day-9/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-9/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-9/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details >
+                        <summary>Day 21 — Advanced Array & Object Patterns</summary>
+                        <ul>
+                            <li><a href="../../day-21/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-21/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-21/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details open>
+                    <summary>Day 22 — Map / Set / WeakMap / WeakSet</summary>
+                        <ul>
+                            <li><a href="../../day-22/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-22/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-22/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+                </ul>
+            </nav>
+
+        </aside>
+
+    </div>
+
+    <script src="../js/hands-on.js"></script>
+
+</body>
+</html>

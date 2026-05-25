@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 22 - Map, Set & WeakMap Homework</title>
+    <link rel="stylesheet" href="../../shared/css/style.css" />
+</head>
+
+<body>
+
+    <div class="page-shell">
+
+        <header class="site-header">
+            <h1>Day 22: Map, Set & WeakMap Homework</h1>
+            <p class="subtitle">homework</p>
+        </header>
+
+        <main class="site-content">
+
+            <article>
+
+                <h2>Advanced Map, Set & WeakMap Practice</h2>
+
+                <section>
+                    <h3>Task 1 : Build a Tag Counter with Map</h3>
+                    <ol>
+                        <li>Create an array of posts where each post has a <code>tags</code> array.</li>
+                        <li>Example:<code>[{ title: "JS", tags: ["js", "web"] }]</code></li>
+                        <li>Build a function that returns: <code>Map(tag → count)</code>.</li>
+                        <li>Use a <code>Map</code> instead of a plain object.</li>
+                        <li>Log the final Map contents using <code>for...of</code>.</li>
+                    </ol>
+                    <pre id="task1Code"></pre>
+                    <h4>Output</h4>
+                    <pre id="homework1Output"></pre>
+                </section>
+
+                <section>
+                    <h3>Task 2 : Build Set Helpers</h3>
+                    <ol>
+                        <li>Create helper functions: <code>union(a, b)</code>, <code>intersection(a, b)</code>, <code>difference(a, b)</code>.</li>
+                        <li>Use only: <code>Set</code>, spread syntax, and loops/helpers.</li>
+                        <li>Test using: <code>a = new Set([1,2,3,4])</code> and<code> b = new Set([3,4,5,6])</code>.</li>
+                        <li>Verify outputs are correct.</li>
+                    </ol>
+                    <pre id="task2Code"></pre>
+                    <h4>Output</h4>
+                    <pre id="homework2Output"></pre>
+                </section>
+
+                <section>
+                    <h3>Task 3 : Sort a Map by Age</h3>
+                    <ol>
+                        <li>Create a Map: <code>{ name → age }</code>.</li>
+                        <li>Convert the Map into an array of: <code>[name, age]</code> pairs.</li>
+                        <li>Sort the array by age in ascending order.</li>
+                        <li>Use array destructuring inside<code>sort()</code>.</li>
+                        <li>Log the sorted result.</li>
+                    </ol>
+                    <pre id="task3Code"></pre>
+                    <h4>Output</h4>
+                    <pre id="homework3Output"></pre>
+                </section>
+
+                <section>
+                    <h3>Task 4 : DOM Event Tracker with WeakMap</h3>
+                    <ol>
+                        <li>Create multiple button elements.</li>
+                        <li>Use a <code>WeakMap</code> to store click counts for each button.</li>
+                        <li>Increment the count whenever a button is clicked.</li>
+                        <li>Log the click count for each button.</li>
+                        <li>Add a comment explaining why <code>WeakMap</code> is better than a plain <code>Map</code> for DOM references.</li>
+                    </ol>
+                    <pre id="task4Code"></pre>
+                    <h4>Output</h4>
+                    <pre id="homework4Output"></pre>
+                </section>
+
+            </article>
+        </main>
+
+        <!-- SIDEBAR -->
+        <aside class="site-outline">
+
+            <h2>Curriculum</h2>
+
+            <nav>
+                <ul>
+
+                    <li>
+                        <a href="../../index.html">Overview</a>
+                    </li>
+
+                    <details>
+                        <summary>Day 1 — Basics</summary>
+                        <ul>
+                            <li><a href="../../day-1/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-1/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-1/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 2 — Variables</summary>
+                        <ul>
+                            <li><a href="../../day-2/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-2/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-2/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 7 — Arrays</summary>
+                        <ul>
+                            <li><a href="../../day-7/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-7/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-7/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 8 — Objects</summary>
+                        <ul>
+                            <li><a href="../../day-8/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-8/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-8/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 9 — Modern Syntax</summary>
+                        <ul>
+                            <li><a href="../../day-9/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-9/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-9/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 10 — DOM Basics</summary>
+                        <ul>
+                            <li><a href="../../day-10/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-10/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-10/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 11 — Events</summary>
+                        <ul>
+                            <li><a href="../../day-11/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-11/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-11/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 20 — The Event Loop</summary>
+                        <ul>
+                            <li><a href="../../day-20/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-20/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-20/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details >
+                        <summary>Day 21 — Advanced Array & Object Patterns</summary>
+                        <ul>
+                            <li><a href="../../day-21/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-21/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-21/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details open>
+                     <summary>Day 22 — Map, Set & WeakMap</summary>
+                        <ul>
+                            <li><a href="../../day-22/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-22/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-22/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+                </ul>
+            </nav>
+
+        </aside>
+
+    </div>
+
+    <script src="../js/homework.js"></script>
+
+</body>
+</html>
