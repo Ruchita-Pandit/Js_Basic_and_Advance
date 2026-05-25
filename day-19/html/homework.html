@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Day 18 —  Async: Callbacks & Promises</title>
+    <title>Day 19 — Async / Await</title>
     <link rel="stylesheet" href="../../shared/css/style.css" />
 </head>
 
@@ -12,72 +12,102 @@
     <div class="page-shell">
 
         <header class="site-header">
-            <h1>Day 18 :  Async: Callbacks & Promises</h1>
+            <h1>Day 19 :  Async / Await</h1>
             <p class="subtitle">homework</p>
         </header>
 
         <main class="site-content">
             <article>
-                <h2>Advanced Async & Promise Practice</h2>
-                <!-- TASK 1 -->
-                <section>
-                    <h3>Task 1 : Build wait(ms)</h3>
-                    <ol>
-                        <li>Write a <code>wait(ms)</code> function.</li>
-                        <li>It should return a Promise.</li>
-                        <li>The Promise resolves after <code>ms</code> milliseconds.</li>
-                        <li>Use it like: <code>wait(500).then(() => console.log("Done"))</code></li>
-                        <li>Verify the delay works correctly.</li>
-                    </ol>
-                    <pre id="task1Code"></pre>
-                    <h4>Output</h4>
-                    <pre id="homework1Output"></pre>
-                </section>
 
-                <!-- TASK 2 -->
-                <section>
-                <h3>Task 2 : Sequential Promise Chaining</h3>
-                <ol>
-                    <li>Create a <code>fetchData(id)</code> function.</li>
-                    <li>Randomly succeed or reject (50/50).</li>
-                    <li>Chain three sequential <code>.then()</code> calls.</li>
-                    <li>End the chain using <code>.catch()</code>.</li>
-                    <li>Run multiple times to observe both success and failure paths.</li>
-                </ol>
-                <pre id="task2Code"></pre>
-                <h4>Output</h4>
-                <pre id="homework2Output"></pre>
-            </section>
+    <h2>Async / Await Homework</h2>
 
-            <!-- TASK 3 -->
-            <section>
-                <h3>Task 3 : Promise.race with Timeout</h3>
-                <ol>
-                    <li>Create a <code>fetchUser(id)</code> Promise.</li>
-                    <li>Use <code>Promise.race()</code>.</li>
-                    <li>Add a 2-second timeout using: <code>wait(2000).then(() => Promise.reject(...))</code></li>
-                    <li>If fetch finishes first → return user data.</li>
-                    <li>If timeout finishes first → show timeout error.</li>
-                </ol>
-                <pre id="task3Code"></pre>
-                <h4>Output</h4>
-                <pre id="homework3Output"></pre>
-            </section>
+    <!-- TASK 1 -->
+    <section>
 
-            <!-- TASK 4 -->
-            <section>
-                <h3>Task 4 : Promise.any with Flaky Fetches</h3>
-                <ol>
-                    <li>Create three flaky fetch Promises.</li>
-                    <li>Some should reject randomly.</li>
-                    <li>Use <code>Promise.any()</code>.</li>
-                    <li>Verify it returns the FIRST successful result.</li>
-                    <li>Observe that rejections are ignored unless ALL fail.</li>
-                </ol>
-                <pre id="task4Code"></pre>
-                <h4>Output</h4>
-                <pre id="homework4Output"></pre>
-            </section>
+        <h3>Task 1 : Convert .then() Chains to async/await</h3>
+
+        <ol>
+            <li>Convert previous Promise chains into <code>async/await</code>.</li>
+            <li>Use <code>try/catch</code> for error handling.</li>
+            <li>Create <code>fetchData(id)</code>.</li>
+            <li>Await three sequential calls.</li>
+            <li>Log success or failure.</li>
+        </ol>
+
+        <pre id="task1Code"></pre>
+
+        <h4>Output</h4>
+        <pre id="homework1Output"></pre>
+
+    </section>
+
+
+    <!-- TASK 2 -->
+    <section>
+
+        <h3>Task 2 : Sequential vs Parallel User Fetch</h3>
+
+        <ol>
+            <li>Create <code>fetchUser(id)</code>.</li>
+            <li>Create <code>fetchAllUsers(ids)</code> using
+                <code>Promise.all + map</code>.
+            </li>
+            <li>Create a sequential version using <code>for...of</code>.</li>
+            <li>Measure execution time using <code>Date.now()</code>.</li>
+            <li>Compare sequential vs parallel performance.</li>
+        </ol>
+
+        <pre id="task2Code"></pre>
+
+        <h4>Output</h4>
+        <pre id="homework2Output"></pre>
+
+    </section>
+
+
+    <!-- TASK 3 -->
+    <section>
+
+        <h3>Task 3 : withTimeout Helper</h3>
+
+        <ol>
+            <li>Create <code>withTimeout(promise, ms)</code>.</li>
+            <li>Use <code>Promise.race()</code> internally.</li>
+            <li>Reject with <code>"timeout"</code> if time exceeds limit.</li>
+            <li>Test using a delayed Promise.</li>
+            <li>Handle errors using <code>try/catch</code>.</li>
+        </ol>
+
+        <pre id="task3Code"></pre>
+
+        <h4>Output</h4>
+        <pre id="homework3Output"></pre>
+
+    </section>
+
+
+    <!-- TASK 4 -->
+    <section>
+
+        <h3>Task 4 : Async Loop with for...of</h3>
+
+        <ol>
+            <li>Loop through:
+                <code>[300, 100, 200]</code>.
+            </li>
+            <li>Wait each amount using <code>await</code>.</li>
+            <li>Use <code>for...of</code>.</li>
+            <li>Log when each delay finishes.</li>
+            <li>Verify order follows input order.</li>
+        </ol>
+
+        <pre id="task4Code"></pre>
+
+        <h4>Output</h4>
+        <pre id="homework4Output"></pre>
+
+    </section>
+
         </article>
     </main>
 
@@ -183,7 +213,7 @@
                             <li><a href="../../day-10/html/homework.html">Homework</a></li>
                         </ul>
                     </details>
-=
+
                     <details>
                         <summary>Day 11 — Events</summary>
                         <ul>
@@ -228,7 +258,7 @@
                             <li><a href="../../day-15/html/homework.html">Homework</a></li>
                         </ul>
                     </details>   
-                    <details open>
+                    <details>
                         <summary>Day 18 —  Async: Callbacks & Promises </summary>
                         <ul>
                             <li><a href="../../day-18/html/lesson.html">Lesson</a></li>
@@ -236,6 +266,15 @@
                             <li><a href="../../day-18/html/homework.html">Homework</a></li>
                         </ul>
                     </details> 
+
+                    <details open >
+                        <summary>Day 19 —  Async / Await </summary>
+                        <ul>
+                            <li><a href="../../day-19/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-19/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-19/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
     
                     <details>
                         <summary>Day 20 — The Event Loop</summary>
