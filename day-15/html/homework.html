@@ -15,37 +15,108 @@
         <main class="site-content">
             <article>
                 <h2>Homework Exercises</h2>
-                <section>
-                <h3>Exercise 1 : this in Object Methods</h3>
-                <pre id="task1Code"><code></code></pre>
-                <h4>Output</h4>
-                <pre id="exercise1Output"></pre>
-            </section>
+                <!-- Exercise 1 -->
+<section>
+    <h3>Exercise 1 : this Keyword Behavior</h3>
 
-            <!-- Exercise 2 -->
-            <section>
-                <h3>Exercise 2 : Fix Callback Bug</h3>
-                <pre id="task2Code"><code></code></pre>
-                <h4>Output</h4>
-                <pre id="exercise2Output"></pre>
-            </section>
+    <ol>
+        <li>Create an object:
+            <code>user = { name, greet }</code>
+        </li>
+        <li>Inside <code>greet()</code>, log <code>this.name</code>.</li>
+        <li>Predict the output before running.</li>
+        <li>Call:
+            <code>user.greet()</code>
+        </li>
+        <li>Store the function:
+            <code>const fn = user.greet; fn()</code>
+        </li>
+        <li>Use:
+            <code>user.greet.call({ name: "X" })</code>
+        </li>
+        <li>Compare all outputs and explain why they differ.</li>
+    </ol>
 
-            <!-- Exercise 3 -->
-            <section>
-                <h3>Exercise 3 : apply()</h3>
-                <pre id="task3Code"><code></code></pre>
-                <h4>Output</h4>
-                <pre id="exercise3Output"></pre>
-            </section>
+    <pre id="task1Code"><code></code></pre>
 
-            <!-- Exercise 4 -->
-            <section>
-                <h3>Exercise 4 : bind with Arrow Function</h3>
-                <pre id="task4Code"><code></code></pre>
-                <h4>Output</h4>
-                <pre id="exercise4Output"></pre>
-            </section>
+    <h4>Output</h4>
 
+    <pre id="exercise1Output"></pre>
+</section>
+
+
+<!-- Exercise 2 -->
+<section>
+    <h3>Exercise 2 : Fix Callback this Bug</h3>
+
+    <ol>
+        <li>Create a class with a method using <code>this</code>.</li>
+        <li>Pass the method as a callback and observe the bug.</li>
+        <li>Fix it using:
+            <ul>
+                <li><code>.bind(this)</code></li>
+                <li>Arrow wrapper</li>
+                <li>Class field arrow function</li>
+            </ul>
+        </li>
+        <li>Document how each fix works.</li>
+    </ol>
+
+    <pre id="task2Code"><code></code></pre>
+
+    <h4>Output</h4>
+
+    <pre id="exercise2Output"></pre>
+</section>
+
+
+<!-- Exercise 3 -->
+<section>
+    <h3>Exercise 3 : Using apply()</h3>
+
+    <ol>
+        <li>Write:
+            <code>function sum(...nums)</code>
+        </li>
+        <li>Return the total using <code>reduce()</code>.</li>
+        <li>Create an array:
+            <code>[1, 2, 3, 4, 5]</code>
+        </li>
+        <li>Use <code>.apply()</code> to call the function.</li>
+        <li>Explain why <code>.apply()</code> is useful with arrays.</li>
+    </ol>
+
+    <pre id="task3Code"><code></code></pre>
+
+    <h4>Output</h4>
+
+    <pre id="exercise3Output"></pre>
+</section>
+
+
+<!-- Exercise 4 -->
+<section>
+    <h3>Exercise 4 : Arrow Functions and bind()</h3>
+
+    <ol>
+        <li>Create:
+            <code>const f = () => console.log(this)</code>
+        </li>
+        <li>Write it at the top-level of a module.</li>
+        <li>Try:
+            <code>f.bind({ x: 1 })</code>
+        </li>
+        <li>Call the bound function.</li>
+        <li>Observe what gets logged.</li>
+        <li>Explain why <code>bind()</code> does not change <code>this</code> for arrow functions.</li>
+    </ol>
+
+    <pre id="task4Code"><code></code></pre>
+
+    <h4>Output</h4>
+
+    <pre id="exercise4Output"></pre>
+</section>
             </article>
         </main>
 

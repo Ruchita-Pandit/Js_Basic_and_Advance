@@ -15,48 +15,92 @@
         <main class="site-content">
             <article>
                 <h2>Homework Exercises</h2>
-                 <section>
-                <h3>Exercise 1 : multiplier(factor)</h3>
+<!-- Exercise 1 -->
+<section>
+    <h3>Exercise 1 : multiplier(factor)</h3>
 
-                <pre id="task1Code"><code></code></pre>
+    <ol>
+        <li>Write <code>multiplier(factor)</code> that returns a function.</li>
+        <li>The returned function should multiply its argument by <code>factor</code>.</li>
+        <li>Create <code>double = multiplier(2)</code>.</li>
+        <li>Create <code>triple = multiplier(3)</code>.</li>
+        <li>Verify both work independently.</li>
+    </ol>
 
-                <h4>Output</h4>
+    <pre id="task1Code"><code></code></pre>
 
-                <pre id="exercise1Output"></pre>
-            </section>
+    <h4>Output</h4>
 
-            <!-- Exercise 2 -->
-            <section>
-                <h3>Exercise 2 : for...of with let</h3>
+    <pre id="exercise1Output"></pre>
+</section>
 
-                <pre id="task2Code"><code></code></pre>
 
-                <h4>Output</h4>
+<!-- Exercise 2 -->
+<section>
+    <h3>Exercise 2 : for...of with let</h3>
 
-                <pre id="exercise2Output"></pre>
-            </section>
+    <ol>
+        <li>Re-create the var-in-loop bug using <code>setTimeout()</code>.</li>
+        <li>Use a <code>for...of</code> loop over <code>[10, 20, 30]</code>.</li>
+        <li>First try with <code>var</code> and predict the output.</li>
+        <li>Then replace it with <code>let</code>.</li>
+        <li>Verify the correct output appears.</li>
+        <li>Explain why <code>let</code> fixes the issue.</li>
+    </ol>
 
-            <!-- Exercise 3 -->
-            <section>
-                <h3>Exercise 3 : Bank Account Closure</h3>
+    <pre id="task2Code"><code></code></pre>
 
-                <pre id="task3Code"><code></code></pre>
+    <h4>Output</h4>
 
-                <h4>Output</h4>
+    <pre id="exercise2Output"></pre>
+</section>
 
-                <pre id="exercise3Output"></pre>
-            </section>
 
-            <!-- Exercise 4 -->
-            <section>
-                <h3>Exercise 4 : once(fn)</h3>
+<!-- Exercise 3 -->
+<section>
+    <h3>Exercise 3 : Bank Account Closure</h3>
 
-                <pre id="task4Code"><code></code></pre>
+    <ol>
+        <li>Create <code>createAccount(initial)</code>.</li>
+        <li>Keep <code>balance</code> private using closures.</li>
+        <li>Add methods:
+            <code>deposit()</code>,
+            <code>withdraw()</code>,
+            <code>getBalance()</code>
+        </li>
+        <li>Add a private <code>transactionCount</code> variable.</li>
+        <li>Increment it on every deposit and withdraw.</li>
+        <li>Add <code>getTransactionCount()</code>.</li>
+        <li>Verify <code>account.balance</code> is undefined.</li>
+    </ol>
 
-                <h4>Output</h4>
+    <pre id="task3Code"><code></code></pre>
 
-                <pre id="exercise4Output"></pre>
-            </section>
+    <h4>Output</h4>
+
+    <pre id="exercise3Output"></pre>
+</section>
+
+
+<!-- Exercise 4 -->
+<section>
+    <h3>Exercise 4 : once(fn)</h3>
+
+    <ol>
+        <li>Write <code>once(fn)</code>.</li>
+        <li>It should return a wrapped version of the function.</li>
+        <li>The wrapped function should only run the FIRST time.</li>
+        <li>Store the first result using closures.</li>
+        <li>Subsequent calls should return the cached result.</li>
+        <li>Verify the original function runs only once.</li>
+    </ol>
+
+    <pre id="task4Code"><code></code></pre>
+
+    <h4>Output</h4>
+
+    <pre id="exercise4Output"></pre>
+</section>
 
 
             </article>
