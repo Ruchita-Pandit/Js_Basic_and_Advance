@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 16 — Prototypes & Inheritance</title>
+    <link rel="stylesheet" href="../../shared/css/style.css" />
+</head>
+
+<body>
+
+    <div class="page-shell">
+
+        <header class="site-header">
+            <h1>Day 16 : Prototypes & Inheritance</h1>
+            <p class="subtitle">homework</p>
+        </header>
+
+        <main class="site-content">
+            <article>
+
+                <h2>Prototype & Inheritance Homework</h2>
+
+                <!-- TASK 1 -->
+                <section>
+
+                    <h3>Task 1 : Multi-Level Prototype Chain</h3>
+
+                    <ol>
+
+                        <li>
+                            Use
+                            <code>Object.create()</code>
+                            to build a 3-level chain:
+                            <code>tool → vehicle → car</code>.
+                        </li>
+
+                        <li>
+                            Add one method at each level.
+                        </li>
+
+                        <li>
+                            Confirm that
+                            <code>car</code>
+                            can call all three methods.
+                        </li>
+
+                        <li>
+                            Inspect the prototype chain using
+                            <code>Object.getPrototypeOf()</code>.
+                        </li>
+
+                        <li>
+                            Draw the complete chain in a comment.
+                        </li>
+
+                    </ol>
+
+                    <pre id="task1Code"></pre>
+
+                    <h4>Output</h4>
+
+                    <pre id="homework1Output"></pre>
+
+                </section>
+
+
+                <!-- TASK 2 -->
+                <section>
+
+                    <h3>Task 2 : Constructor Function Inheritance</h3>
+
+                    <ol>
+
+                        <li>
+                            Create a constructor:
+                            <code>Shape(name)</code>
+                        </li>
+
+                        <li>
+                            Add:
+                            <code>describe()</code>
+                            to
+                            <code>Shape.prototype</code>
+                        </li>
+
+                        <li>
+                            Create:
+                            <code>Circle(name, radius)</code>
+                        </li>
+
+                        <li>
+                            Inherit from:
+                            <code>Shape</code>
+                        </li>
+
+                        <li>
+                            Add:
+                            <code>area()</code>
+                            method.
+                        </li>
+
+                        <li>
+                            Create:
+                            <code>new Circle("C1", 5)</code>
+                        </li>
+
+                        <li>
+                            Call both:
+                            <code>describe()</code>
+                            and
+                            <code>area()</code>
+                        </li>
+
+                    </ol>
+
+                    <pre id="task2Code"></pre>
+
+                    <h4>Output</h4>
+
+                    <pre id="homework2Output"></pre>
+
+                </section>
+
+
+                <!-- TASK 3 -->
+                <section>
+
+                    <h3>Task 3 : Explore Built-in Prototypes</h3>
+
+                    <ol>
+
+                        <li>
+                            Choose a built-in prototype:
+                            <code>String.prototype</code>
+                            or
+                            <code>Array.prototype</code>
+                        </li>
+
+                        <li>
+                            Inspect it in the console.
+                        </li>
+
+                        <li>
+                            Find five methods you didn’t know about.
+                        </li>
+
+                        <li>
+                            Document one method with a code example.
+                        </li>
+
+                        <li>
+                            Explain what the method does.
+                        </li>
+
+                    </ol>
+
+                    <pre id="task3Code"></pre>
+
+                    <h4>Output</h4>
+
+                    <pre id="homework3Output"></pre>
+
+                </section>
+
+
+                <!-- TASK 4 -->
+                <section>
+
+                    <h3>Task 4 : Prototype Chain Inspector</h3>
+
+                    <ol>
+
+                        <li>
+                            Write a function:
+                            <code>chainOf(obj)</code>
+                        </li>
+
+                        <li>
+                            Return every prototype in the chain.
+                        </li>
+
+                        <li>
+                            Continue until the chain reaches:
+                            <code>null</code>
+                        </li>
+
+                        <li>
+                            Test the function using arrays,
+                            objects, and custom instances.
+                        </li>
+
+                        <li>
+                            Log the full prototype chain.
+                        </li>
+
+                    </ol>
+
+                    <pre id="task4Code"></pre>
+
+                    <h4>Output</h4>
+
+                    <pre id="homework4Output"></pre>
+
+                </section>
+
+            </article>
+        </main>
+
+        <!-- SIDEBAR -->
+        <aside class="site-outline">
+
+            <h2>Curriculum</h2>
+
+            <nav>
+
+                <ul>
+
+                    <li>
+                        <a href="../../index.html">Overview</a>
+                    </li>
+
+                    <details>
+                        <summary>Day 1 — Basics</summary>
+                        <ul>
+                            <li><a href="../../day-1/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-1/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-1/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 2 — Variables</summary>
+                        <ul>
+                            <li><a href="../../day-2/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-2/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-2/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 3 — Operators</summary>
+                        <ul>
+                            <li><a href="../../day-3/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-3/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-3/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 4 — Control Flow</summary>
+                        <ul>
+                            <li><a href="../../day-4/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-4/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-4/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 5 — Loops</summary>
+                        <ul>
+                            <li><a href="../../day-5/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-5/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-5/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 6 — Functions</summary>
+                        <ul>
+                            <li><a href="../../day-6/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-6/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-6/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 7 — Arrays</summary>
+                        <ul>
+                            <li><a href="../../day-7/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-7/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-7/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 8 — Objects</summary>
+                        <ul>
+                            <li><a href="../../day-8/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-8/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-8/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 9 — Modern Syntax</summary>
+                        <ul>
+                            <li><a href="../../day-9/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-9/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-9/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 10 — DOM Basics</summary>
+                        <ul>
+                            <li><a href="../../day-10/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-10/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-10/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 11 — Events</summary>
+                        <ul>
+                            <li><a href="../../day-11/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-11/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-11/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 12 — Error Handling</summary>
+                        <ul>
+                            <li><a href="../../day-12/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-12/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-12/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 13 — Hoisting & TDZ</summary>
+                        <ul>
+                            <li><a href="../../day-13/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-13/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-13/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 14 — Scope & Closure</summary>
+                        <ul>
+                            <li><a href="../../day-14/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-14/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-14/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 15 — The this Keyword</summary>
+                        <ul>
+                            <li><a href="../../day-15/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-15/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-15/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details open>
+                        <summary>Day 16 — Prototypes & Inheritance</summary>
+                        <ul>
+                            <li><a href="../../day-16/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-16/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-16/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                </ul>
+
+            </nav>
+
+        </aside>
+
+    </div>
+
+    <script src="../js/homework.js"></script>
+
+</body>
+</html>
