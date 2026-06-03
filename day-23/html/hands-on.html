@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 23 - Iterators & Generators</title>
+    <link rel="stylesheet" href="../../shared/css/style.css" />
+</head>
+
+<body>
+    <div class="page-shell">
+
+        <header class="site-header">
+            <h1>Day 23: Iterators & Generators</h1>
+            <p class="subtitle">hands-on</p>
+        </header>
+
+        <main class="site-content">
+
+    <article>
+
+        <h2>Iterators & Generators Practice</h2>
+
+        <!-- TASK 1 -->
+
+        <section>
+
+            <h3>Task 1 : Manual Iterator</h3>
+
+            <ol>
+
+                <li>
+                    Build a
+                    <code>range(from, to)</code>
+                    iterable object (not a generator)
+                    using
+                    <code>[Symbol.iterator]</code>.
+                </li>
+
+                <li>
+                    Test with
+                    <code>for...of</code>
+                    over
+                    <code>range(3, 7)</code>.
+                </li>
+
+                <li>
+                    It should log:
+                    <code>3, 4, 5, 6, 7</code>.
+                </li>
+
+                <li>
+                    Test with:
+                    <code>[...range(1, 3)]</code>
+                </li>
+
+                <li>
+                    Output should be:
+                    <code>[1, 2, 3]</code>
+                </li>
+
+            </ol>
+
+            <pre id="task1Code"></pre>
+
+            <h4>Output</h4>
+
+            <pre id="task1Output"></pre>
+
+        </section>
+
+
+
+        <!-- TASK 2 -->
+
+        <section>
+
+            <h3>Task 2 : Range Generator</h3>
+
+            <ol>
+
+                <li>
+                    Re-do Task 1 using
+                    <code>function*</code>.
+                </li>
+
+                <li>
+                    Verify the same
+                    <code>for...of</code>
+                    and spread tests pass.
+                </li>
+
+                <li>
+                    In a comment,
+                    note the line-count difference.
+                </li>
+
+            </ol>
+
+            <pre id="task2Code"></pre>
+
+            <h4>Output</h4>
+
+            <pre id="task2Output"></pre>
+
+        </section>
+
+
+
+        <!-- TASK 3 -->
+
+        <section>
+
+            <h3>Task 3 : Take from Infinite</h3>
+
+            <ol>
+
+                <li>
+                    Write
+                    <code>take(iter, n)</code>
+                    that takes only the first
+                    <code>n</code>
+                    values from any iterator/generator.
+                </li>
+
+                <li>
+                    Build an infinite
+                    <code>naturals()</code>
+                    generator:
+                    <code>1, 2, 3...</code>
+                </li>
+
+                <li>
+                    Use:
+                    <code>take(naturals(), 5)</code>
+                </li>
+
+                <li>
+                    Output should be:
+                    <code>[1, 2, 3, 4, 5]</code>
+                </li>
+
+            </ol>
+
+            <pre id="task3Code"></pre>
+
+            <h4>Output</h4>
+
+            <pre id="task3Output"></pre>
+
+        </section>
+
+
+
+        <!-- BONUS TASK -->
+
+        <section>
+
+            <h3>Bonus Task : Tree Walk with yield*</h3>
+
+            <ol>
+
+                <li>
+                    Build a tree object with nested children.
+                </li>
+
+                <li>
+                    Write a generator:
+                    <code>walk(node)</code>
+                </li>
+
+                <li>
+                    Yield each value in depth-first order.
+                </li>
+
+                <li>
+                    Use:
+                    <code>yield*</code>
+                    for recursion.
+                </li>
+
+                <li>
+                    Spread to an array.
+                </li>
+
+                <li>
+                    Output should be:
+                    <code>[1, 2, 3, 4]</code>
+                </li>
+
+            </ol>
+
+            <pre id="task4Code"></pre>
+
+            <h4>Output</h4>
+
+            <pre id="task4Output"></pre>
+
+        </section>
+
+    </article>
+
+</main>
+
+        <!-- SIDEBAR -->
+        <aside class="site-outline">
+            <h2>Curriculum</h2>
+            <nav>
+                <ul>
+
+                    <li>
+                        <a href="../../index.html">Overview</a>
+                    </li>
+
+                    <details>
+                        <summary>Day 1 — Basics</summary>
+                        <ul>
+                            <li><a href="../../day-1/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-1/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-1/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 2 — Variables</summary>
+                        <ul>
+                            <li><a href="../../day-2/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-2/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-2/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 3 — Operators</summary>
+                        <ul>
+                            <li><a href="day-3/html/lesson.html">Lesson</a></li>
+                            <li><a href="day-3/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="day-3/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 4 — Control Flow</summary>
+                        <ul>
+                            <li><a href="day-4/html/lesson.html">Lesson</a></li>
+                            <li><a href="day-4/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="day-4/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 5 — Loops</summary>
+                        <ul>
+                            <li><a href="day-5/html/lesson.html">Lesson</a></li>
+                            <li><a href="day-5/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="day-5/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 6 — Functions</summary>
+                        <ul>
+                            <li><a href="day-6/html/lesson.html">Lesson</a></li>
+                            <li><a href="day-6/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="day-6/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+
+                    <details>
+                        <summary>Day 7 — Arrays</summary>
+                        <ul>
+                            <li><a href="../../day-7/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-7/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-7/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 8 — Objects</summary>
+                        <ul>
+                            <li><a href="../../day-8/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-8/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-8/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 9 — Modern Syntax</summary>
+                        <ul>
+                            <li><a href="../../day-9/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-9/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-9/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+                    <details>
+                        <summary>Day 10 — DOM Basics</summary>
+                        <ul>
+                            <li><a href="day-10/html/lesson.html">Lesson</a></li>
+                            <li><a href="day-10/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="day-10/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 11 — Events</summary>
+                        <ul>
+                            <li><a href="day-11/html/lesson.html">Lesson</a></li>
+                            <li><a href="day-11/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="day-11/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 12 — Error Handling</summary>
+                        <ul>
+                            <li><a href="day-12/html/lesson.html">Lesson</a></li>
+                            <li><a href="day-12/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="day-12/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>Day 13 — Hoisting & TDZ</summary>
+                        <ul>
+                            <li><a href="day-13/html/lesson.html">Lesson</a></li>
+                            <li><a href="day-13/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="day-13/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details >
+                        <summary>Day 14 — Scope & Clouser </summary>
+                        <ul>
+                            <li><a href="../../day-14/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-14/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-14/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details >
+                        <summary>Day 15 — The this Keyword </summary>
+                        <ul>
+                            <li><a href="../../day-15/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-15/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-15/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>   
+                    <details>
+                        <summary>Day 16 — Prototypes</summary>
+                        <ul>
+                            <li><a href="lesson.html" aria-current="page">Lesson</a></li>
+                            <li><a href="hands-on.html">Hands-on</a></li>
+                            <li><a href="homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+                                        <details >
+                        <summary>Day 17 —  Classes & OOP </summary>
+                        <ul>
+                            <li><a href="../../day-17/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-17/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-17/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details> 
+                    <details >
+                        <summary>Day 18 —  Async: Callbacks & Promises </summary>
+                        <ul>
+                            <li><a href="../../day-18/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-18/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-18/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details> 
+                    <details >
+                        <summary>Day 19 —  Async / Await </summary>
+                        <ul>
+                            <li><a href="../../day-19/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-19/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-19/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+                    <details>
+                        <summary>Day 20 — The Event Loop </summary>
+                        <ul>
+                            <li><a href="../../day-20/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-20/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-20/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+                    <details >
+                        <summary>Day 21 — Advanced Array & Object Patterns</summary>
+                        <ul>
+                            <li><a href="../../day-21/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-21/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-21/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+
+                    <details>
+                    <summary>Day 22 — Map / Set / WeakMap / WeakSet</summary>
+                        <ul>
+                            <li><a href="../../day-22/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-22/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-22/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+                    <details open>
+                    <summary>Day 23 — Iterators & Generators </summary>
+                        <ul>
+                            <li><a href="../../day-23/html/lesson.html">Lesson</a></li>
+                            <li><a href="../../day-23/html/hands-on.html">Hands-on</a></li>
+                            <li><a href="../../day-23/html/homework.html">Homework</a></li>
+                        </ul>
+                    </details>
+                </ul>
+            </nav>
+
+        </aside>
+
+    </div>
+
+    <script src="../js/hands-on.js"></script>
+
+</body>
+</html>
